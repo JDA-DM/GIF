@@ -9,6 +9,6 @@ https://www.digital.go.jp/policies/data_strategy_government_interoperability_fra
 
 ## GIFの公開リポジトリにおけるGithub Issueの扱いについて
 
-利用者はGithubのIssue機能を使って、GIFについて課題の提起や修正点の指摘を行うことができます。
+利用者はGithubのIssue機能を使って、GIFについて課題の提起や修正の提案を行うことができます。
 IssueについてはGIF改善のための貴重なご意見として参考にさせていただきますが、
-個別のIssueについて政府担当者からの逐次の返答はできかねますことをご了承ください。
+個別のIssueにうちえは、回答しない場合があるのでご了承ください。
