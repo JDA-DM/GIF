@@ -343,8 +343,6 @@
 | 2022年5月9日  | P7       | コアデータモデルに土地、建物、設備を追加 |
 | 2022年3月31日 |          | 初版決定                                 |
 
-[^1]:
-    > https://joinup.ec.europa.eu/collection/semantic-interoperability-community-semic
+[^1]: https://joinup.ec.europa.eu/collection/semantic-interoperability-community-semic
 
-[^2]:
-    > https://www.niem.gov/
+[^2]: https://www.niem.gov/
