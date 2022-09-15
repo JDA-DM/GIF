@@ -1,35 +1,29 @@
-デジタル社会推進実践ガイドブック DS-43B
 
-> コアデータモデル解説書  
-> 設備
+# コアデータモデル解説書 設備 <!-- omit in toc -->
+
+デジタル社会推進実践ガイドブック DS-43B
 
 2022年（令和4年）5月9日
 
 デジタル庁
 
-<table>
-<colgroup>
-<col style="width: 100%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th><p>[キーワード]</p>
-<p>設備、データモデル</p>
-<p>[概要]</p>
-<p>設備の情報をシステム実装する際に参照すべきデータモデルについて解説するガイドブックです。このガイドに従いデータ設計を行うことで、同じ設計規則に従うシステム間、分野間でのデータ連携を容易かつ正確に行えるようになります。また、データ設計を実施するコストも削減することができます。</p></th>
-</tr>
-</thead>
-<tbody>
-</tbody>
-</table>
+-----
+**[キーワード]**
 
-## 設備のデータモデル
+設備、データモデル
+
+**[概要]**
+
+設備の情報をシステム実装する際に参照すべきデータモデルについて解説するガイドブックです。このガイドに従いデータ設計を行うことで、同じ設計規則に従うシステム間、分野間でのデータ連携を容易かつ正確に行えるようになります。また、データ設計を実施するコストも削減することができます。
+
+-----
+## 1. 設備のデータモデル
 
 設備の情報を記述するためのデータモデルです。
 
 必須項目以外は任意項目なので、用途に応じて項目を選択、あるいは独自項目を追加するなどのカスタマイズを行って利用してください。
 
-### 設備データモデルの項目
+### 1.1. 設備データモデルの項目
 
 設備データモデルの項目は表1の通りです。英語名や記入例などを含む詳細については、別添の「438_コアデータモデル_DMD.xlsx」を参照してください。
 
@@ -54,9 +48,10 @@
 |          | 備考         | 設備の備考                                                   |
 |          | 連絡先情報   | 連絡先の情報（連絡先型）                                     |
 
-## 関連データ定義
+-----
+## 2. 関連データ定義
 
-### データモデルの関係性
+### 2.1. データモデルの関係性
 
 設備は、IMIコア語彙や3D都市モデル標準性仕様書（CityGML）furniturにも定義があります。その関係性を以下に示します。
 
@@ -81,704 +76,106 @@
 | 備考          | ic:記述         |                 |
 | 連絡先情報    | ic:連絡先       |                 |
 
-### コントロールド・ボキャブラリ（統制語彙）
+### 2.2. コントロールド・ボキャブラリ（統制語彙）
 
-####### 区分
+#### 2.2.1. 区分
 
-> CityGML 2.0　Annex C.4のコードを使用する。
+CityGML 2.0　Annex C.4のコードを使用する。
 
-<table>
-<colgroup>
-<col style="width: 23%" />
-<col style="width: 76%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th><blockquote>
-<p>コード</p>
-</blockquote></th>
-<th><blockquote>
-<p>説明</p>
-</blockquote></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><blockquote>
-<p>1000</p>
-</blockquote></td>
-<td><blockquote>
-<p>交通施設</p>
-</blockquote></td>
-</tr>
-<tr class="even">
-<td><blockquote>
-<p>1010</p>
-</blockquote></td>
-<td><blockquote>
-<p>通信施設</p>
-</blockquote></td>
-</tr>
-<tr class="odd">
-<td><blockquote>
-<p>1020</p>
-</blockquote></td>
-<td><blockquote>
-<p>保安施設</p>
-</blockquote></td>
-</tr>
-<tr class="even">
-<td><blockquote>
-<p>1030</p>
-</blockquote></td>
-<td><blockquote>
-<p>その他</p>
-</blockquote></td>
-</tr>
-</tbody>
-</table>
+| コード | 説明 |
+|-------|------|
+| 1000 | 交通施設 |
+| 1010 | 通信施設 |
+| 1020 | 保安施設 |
+| 1030 | その他   |
 
-####### 種類
+#### 2.2.2. 種類
 
-> 道路基盤地図情報製品仕様書（案）、作業規程の準則（公共測量標準図式）を使用する。
+道路基盤地図情報製品仕様書（案）、作業規程の準則（公共測量標準図式）を使用する。
 
-<table>
-<colgroup>
-<col style="width: 23%" />
-<col style="width: 76%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th><blockquote>
-<p>コード</p>
-</blockquote></th>
-<th><blockquote>
-<p>説明</p>
-</blockquote></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><blockquote>
-<p>1000</p>
-</blockquote></td>
-<td><blockquote>
-<p>道路標示</p>
-</blockquote></td>
-</tr>
-<tr class="even">
-<td><blockquote>
-<p>1010</p>
-</blockquote></td>
-<td><blockquote>
-<p>区画線</p>
-</blockquote></td>
-</tr>
-<tr class="odd">
-<td><blockquote>
-<p>1020</p>
-</blockquote></td>
-<td><blockquote>
-<p>車道中央線</p>
-</blockquote></td>
-</tr>
-<tr class="even">
-<td><blockquote>
-<p>1030</p>
-</blockquote></td>
-<td><blockquote>
-<p>車線境界線</p>
-</blockquote></td>
-</tr>
-<tr class="odd">
-<td><blockquote>
-<p>1040</p>
-</blockquote></td>
-<td><blockquote>
-<p>車道外側線</p>
-</blockquote></td>
-</tr>
-<tr class="even">
-<td><blockquote>
-<p>1100</p>
-</blockquote></td>
-<td><blockquote>
-<p>指示標示</p>
-</blockquote></td>
-</tr>
-<tr class="odd">
-<td><blockquote>
-<p>1110</p>
-</blockquote></td>
-<td><blockquote>
-<p>横断歩道</p>
-</blockquote></td>
-</tr>
-<tr class="even">
-<td><blockquote>
-<p>1120</p>
-</blockquote></td>
-<td><blockquote>
-<p>停止線</p>
-</blockquote></td>
-</tr>
-<tr class="odd">
-<td><blockquote>
-<p>1200</p>
-</blockquote></td>
-<td><blockquote>
-<p>規制標示</p>
-</blockquote></td>
-</tr>
-<tr class="even">
-<td><blockquote>
-<p>2000</p>
-</blockquote></td>
-<td><blockquote>
-<p>柵・壁</p>
-</blockquote></td>
-</tr>
-<tr class="odd">
-<td><blockquote>
-<p>3000</p>
-</blockquote></td>
-<td><blockquote>
-<p>道路標識</p>
-</blockquote></td>
-</tr>
-<tr class="even">
-<td><blockquote>
-<p>3110</p>
-</blockquote></td>
-<td><blockquote>
-<p>案内標識</p>
-</blockquote></td>
-</tr>
-<tr class="odd">
-<td><blockquote>
-<p>3120</p>
-</blockquote></td>
-<td><blockquote>
-<p>警戒標識</p>
-</blockquote></td>
-</tr>
-<tr class="even">
-<td><blockquote>
-<p>3130</p>
-</blockquote></td>
-<td><blockquote>
-<p>規制標識</p>
-</blockquote></td>
-</tr>
-<tr class="odd">
-<td><blockquote>
-<p>3140</p>
-</blockquote></td>
-<td><blockquote>
-<p>指示標識</p>
-</blockquote></td>
-</tr>
-<tr class="even">
-<td><blockquote>
-<p>3150</p>
-</blockquote></td>
-<td><blockquote>
-<p>補助標識</p>
-</blockquote></td>
-</tr>
-<tr class="odd">
-<td><blockquote>
-<p>4000</p>
-</blockquote></td>
-<td><blockquote>
-<p>建造物</p>
-</blockquote></td>
-</tr>
-<tr class="even">
-<td><blockquote>
-<p>4010</p>
-</blockquote></td>
-<td><blockquote>
-<p>上屋</p>
-</blockquote></td>
-</tr>
-<tr class="odd">
-<td><blockquote>
-<p>4020</p>
-</blockquote></td>
-<td><blockquote>
-<p>地下出入口</p>
-</blockquote></td>
-</tr>
-<tr class="even">
-<td><blockquote>
-<p>4100</p>
-</blockquote></td>
-<td><blockquote>
-<p>視線誘導標</p>
-</blockquote></td>
-</tr>
-<tr class="odd">
-<td><blockquote>
-<p>4120</p>
-</blockquote></td>
-<td><blockquote>
-<p>道路反射鏡</p>
-</blockquote></td>
-</tr>
-<tr class="even">
-<td><blockquote>
-<p>4200</p>
-</blockquote></td>
-<td><blockquote>
-<p>照明施設</p>
-</blockquote></td>
-</tr>
-<tr class="odd">
-<td><blockquote>
-<p>4300</p>
-</blockquote></td>
-<td><blockquote>
-<p>道路情報管理施設</p>
-</blockquote></td>
-</tr>
-<tr class="even">
-<td><blockquote>
-<p>4400</p>
-</blockquote></td>
-<td><blockquote>
-<p>災害検知器</p>
-</blockquote></td>
-</tr>
-<tr class="odd">
-<td><blockquote>
-<p>4500</p>
-</blockquote></td>
-<td><blockquote>
-<p>気象観測装置</p>
-</blockquote></td>
-</tr>
-<tr class="even">
-<td><blockquote>
-<p>4600</p>
-</blockquote></td>
-<td><blockquote>
-<p>道路情報板</p>
-</blockquote></td>
-</tr>
-<tr class="odd">
-<td><blockquote>
-<p>4700</p>
-</blockquote></td>
-<td><blockquote>
-<p>光ファイバー</p>
-</blockquote></td>
-</tr>
-<tr class="even">
-<td><blockquote>
-<p>4800</p>
-</blockquote></td>
-<td><blockquote>
-<p>柱</p>
-</blockquote></td>
-</tr>
-<tr class="odd">
-<td><blockquote>
-<p>4810</p>
-</blockquote></td>
-<td><blockquote>
-<p>路側</p>
-</blockquote></td>
-</tr>
-<tr class="even">
-<td><blockquote>
-<p>4820</p>
-</blockquote></td>
-<td><blockquote>
-<p>片持</p>
-</blockquote></td>
-</tr>
-<tr class="odd">
-<td><blockquote>
-<p>4830</p>
-</blockquote></td>
-<td><blockquote>
-<p>門型</p>
-</blockquote></td>
-</tr>
-<tr class="even">
-<td><blockquote>
-<p>4840</p>
-</blockquote></td>
-<td><blockquote>
-<p>電柱</p>
-</blockquote></td>
-</tr>
-<tr class="odd">
-<td><blockquote>
-<p>4900</p>
-</blockquote></td>
-<td><blockquote>
-<p>交通信号機</p>
-</blockquote></td>
-</tr>
-<tr class="even">
-<td><blockquote>
-<p>5000</p>
-</blockquote></td>
-<td><blockquote>
-<p>階段</p>
-</blockquote></td>
-</tr>
-<tr class="odd">
-<td><blockquote>
-<p>5010</p>
-</blockquote></td>
-<td><blockquote>
-<p>通路</p>
-</blockquote></td>
-</tr>
-<tr class="even">
-<td><blockquote>
-<p>5020</p>
-</blockquote></td>
-<td><blockquote>
-<p>エレベータ</p>
-</blockquote></td>
-</tr>
-<tr class="odd">
-<td><blockquote>
-<p>5030</p>
-</blockquote></td>
-<td><blockquote>
-<p>エスカレータ</p>
-</blockquote></td>
-</tr>
-<tr class="even">
-<td><blockquote>
-<p>5100</p>
-</blockquote></td>
-<td><blockquote>
-<p>管理用地上施設</p>
-</blockquote></td>
-</tr>
-<tr class="odd">
-<td><blockquote>
-<p>5200</p>
-</blockquote></td>
-<td><blockquote>
-<p>電線共同溝</p>
-</blockquote></td>
-</tr>
-<tr class="even">
-<td><blockquote>
-<p>5300</p>
-</blockquote></td>
-<td><blockquote>
-<p>CAB</p>
-</blockquote></td>
-</tr>
-<tr class="odd">
-<td><blockquote>
-<p>5400</p>
-</blockquote></td>
-<td><blockquote>
-<p>情報BOX</p>
-</blockquote></td>
-</tr>
-<tr class="even">
-<td><blockquote>
-<p>5500</p>
-</blockquote></td>
-<td><blockquote>
-<p>管路</p>
-</blockquote></td>
-</tr>
-<tr class="odd">
-<td><blockquote>
-<p>5600</p>
-</blockquote></td>
-<td><blockquote>
-<p>管理用開口部</p>
-</blockquote></td>
-</tr>
-<tr class="even">
-<td><blockquote>
-<p>5610</p>
-</blockquote></td>
-<td><blockquote>
-<p>マンホール</p>
-</blockquote></td>
-</tr>
-<tr class="odd">
-<td><blockquote>
-<p>5620</p>
-</blockquote></td>
-<td><blockquote>
-<p>ハンドホール</p>
-</blockquote></td>
-</tr>
-<tr class="even">
-<td><blockquote>
-<p>5630</p>
-</blockquote></td>
-<td><blockquote>
-<p>入孔</p>
-</blockquote></td>
-</tr>
-<tr class="odd">
-<td><blockquote>
-<p>6000</p>
-</blockquote></td>
-<td><blockquote>
-<p>距離標</p>
-</blockquote></td>
-</tr>
-<tr class="even">
-<td><blockquote>
-<p>6010</p>
-</blockquote></td>
-<td><blockquote>
-<p>境界標識</p>
-</blockquote></td>
-</tr>
-<tr class="odd">
-<td><blockquote>
-<p>6020</p>
-</blockquote></td>
-<td><blockquote>
-<p>道路元標・里程標</p>
-</blockquote></td>
-</tr>
-<tr class="even">
-<td><blockquote>
-<p>6100</p>
-</blockquote></td>
-<td><blockquote>
-<p>料金徴収施設</p>
-</blockquote></td>
-</tr>
-<tr class="odd">
-<td><blockquote>
-<p>6200</p>
-</blockquote></td>
-<td><blockquote>
-<p>融雪施設</p>
-</blockquote></td>
-</tr>
-<tr class="even">
-<td><blockquote>
-<p>7000</p>
-</blockquote></td>
-<td><blockquote>
-<p>排水施設</p>
-</blockquote></td>
-</tr>
-<tr class="odd">
-<td><blockquote>
-<p>7100</p>
-</blockquote></td>
-<td><blockquote>
-<p>集水桝</p>
-</blockquote></td>
-</tr>
-<tr class="even">
-<td><blockquote>
-<p>7200</p>
-</blockquote></td>
-<td><blockquote>
-<p>排水溝</p>
-</blockquote></td>
-</tr>
-<tr class="odd">
-<td><blockquote>
-<p>7300</p>
-</blockquote></td>
-<td><blockquote>
-<p>側溝</p>
-</blockquote></td>
-</tr>
-<tr class="even">
-<td><blockquote>
-<p>7400</p>
-</blockquote></td>
-<td><blockquote>
-<p>排水管</p>
-</blockquote></td>
-</tr>
-<tr class="odd">
-<td><blockquote>
-<p>7500</p>
-</blockquote></td>
-<td><blockquote>
-<p>排水ポンプ</p>
-</blockquote></td>
-</tr>
-<tr class="even">
-<td><blockquote>
-<p>8010</p>
-</blockquote></td>
-<td><blockquote>
-<p>停留所</p>
-</blockquote></td>
-</tr>
-<tr class="odd">
-<td><blockquote>
-<p>8020</p>
-</blockquote></td>
-<td><blockquote>
-<p>消火栓</p>
-</blockquote></td>
-</tr>
-<tr class="even">
-<td><blockquote>
-<p>8030</p>
-</blockquote></td>
-<td><blockquote>
-<p>郵便ポスト</p>
-</blockquote></td>
-</tr>
-<tr class="odd">
-<td><blockquote>
-<p>8040</p>
-</blockquote></td>
-<td><blockquote>
-<p>電話ボックス</p>
-</blockquote></td>
-</tr>
-<tr class="even">
-<td><blockquote>
-<p>8050</p>
-</blockquote></td>
-<td><blockquote>
-<p>輸送管</p>
-</blockquote></td>
-</tr>
-<tr class="odd">
-<td><blockquote>
-<p>8060</p>
-</blockquote></td>
-<td><blockquote>
-<p>軌道</p>
-</blockquote></td>
-</tr>
-<tr class="even">
-<td><blockquote>
-<p>8070</p>
-</blockquote></td>
-<td><blockquote>
-<p>架空線</p>
-</blockquote></td>
-</tr>
-<tr class="odd">
-<td><blockquote>
-<p>8080</p>
-</blockquote></td>
-<td><blockquote>
-<p>自動販売機</p>
-</blockquote></td>
-</tr>
-<tr class="even">
-<td><blockquote>
-<p>8090</p>
-</blockquote></td>
-<td><blockquote>
-<p>墓碑</p>
-</blockquote></td>
-</tr>
-<tr class="odd">
-<td><blockquote>
-<p>8100</p>
-</blockquote></td>
-<td><blockquote>
-<p>記念碑</p>
-</blockquote></td>
-</tr>
-<tr class="even">
-<td><blockquote>
-<p>8110</p>
-</blockquote></td>
-<td><blockquote>
-<p>立像</p>
-</blockquote></td>
-</tr>
-<tr class="odd">
-<td><blockquote>
-<p>8120</p>
-</blockquote></td>
-<td><blockquote>
-<p>噴水</p>
-</blockquote></td>
-</tr>
-<tr class="even">
-<td><blockquote>
-<p>8130</p>
-</blockquote></td>
-<td><blockquote>
-<p>井戸</p>
-</blockquote></td>
-</tr>
-<tr class="odd">
-<td><blockquote>
-<p>8140</p>
-</blockquote></td>
-<td><blockquote>
-<p>掲示板</p>
-</blockquote></td>
-</tr>
-<tr class="even">
-<td><blockquote>
-<p>8150</p>
-</blockquote></td>
-<td><blockquote>
-<p>点字ブロック</p>
-</blockquote></td>
-</tr>
-<tr class="odd">
-<td><blockquote>
-<p>8160</p>
-</blockquote></td>
-<td><blockquote>
-<p>ベンチ</p>
-</blockquote></td>
-</tr>
-<tr class="even">
-<td><blockquote>
-<p>8170</p>
-</blockquote></td>
-<td><blockquote>
-<p>テーブル</p>
-</blockquote></td>
-</tr>
-<tr class="odd">
-<td><blockquote>
-<p>9000</p>
-</blockquote></td>
-<td><blockquote>
-<p>その他</p>
-</blockquote></td>
-</tr>
-<tr class="even">
-<td><blockquote>
-<p>9001</p>
-</blockquote></td>
-<td><blockquote>
-<p>看板（自立式）</p>
-</blockquote></td>
-</tr>
-<tr class="odd">
-<td><blockquote>
-<p>9002</p>
-</blockquote></td>
-<td><blockquote>
-<p>水飲み</p>
-</blockquote></td>
-</tr>
-</tbody>
-</table>
+| コード | 説明 |
+|-------|------|
+| 1000 | 道路標示 |
+| 1010 | 区画線 |
+| 1020 | 車道中央線 |
+| 1030 | 車線境界線 |
+| 1040 | 車道外側線 |
+| 1100 | 指示標示 |
+| 1110 | 横断歩道 |
+| 1120 | 停止線 |
+| 1200 | 規制標示 |
+| 2000 | 柵・壁 |
+| 3000 | 道路標識 |
+| 3110 | 案内標識 |
+| 3120 | 警戒標識 |
+| 3130 | 規制標識 |
+| 3140 | 指示標識 |
+| 3150 | 補助標識 |
+| 4000 | 建造物 |
+| 4010 | 上屋 |
+| 4020 | 地下出入口 |
+| 4100 | 視線誘導標 |
+| 4120 | 道路反射鏡 |
+| 4200 | 照明施設 |
+| 4300 | 道路情報管理施設 |
+| 4400 | 災害検知器 |
+| 4500 | 気象観測装置 |
+| 4600 | 道路情報板 |
+| 4700 | 光ファイバー |
+| 4800 | 柱 |
+| 4810 | 路側 |
+| 4820 | 片持 |
+| 4830 | 門型 |
+| 4840 | 電柱 |
+| 4900 | 交通信号機 |
+| 5000 | 階段 |
+| 5010 | 通路 |
+| 5020 | エレベータ |
+| 5030 | エスカレータ |
+| 5100 | 管理用地上施設 |
+| 5200 | 電線共同溝 |
+| 5300 | CAB |
+| 5400 | 情報BOX |
+| 5500 | 管路 |
+| 5600 | 管理用開口部 |
+| 5610 | マンホール |
+| 5620 | ハンドホール |
+| 5630 | 入孔 |
+| 6000 | 距離標 |
+| 6010 | 境界標識 |
+| 6020 | 道路元標・里程標 |
+| 6100 | 料金徴収施設 |
+| 6200 | 融雪施設 |
+| 7000 | 排水施設 |
+| 7100 | 集水桝 |
+| 7200 | 排水溝 |
+| 7300 | 側溝 |
+| 7400 | 排水管 |
+| 7500 | 排水ポンプ |
+| 8010 | 停留所 |
+| 8020 | 消火栓 |
+| 8030 | 郵便ポスト |
+| 8040 | 電話ボックス |
+| 8050 | 輸送管 |
+| 8060 | 軌道 |
+| 8070 | 架空線 |
+| 8080 | 自動販売機 |
+| 8090 | 墓碑 |
+| 8100 | 記念碑 |
+| 8110 | 立像 |
+| 8120 | 噴水 |
+| 8130 | 井戸 |
+| 8140 | 掲示板 |
+| 8150 | 点字ブロック |
+| 8160 | ベンチ |
+| 8170 | テーブル |
+| 9000 | その他 |
+| 9001 | 看板（自立式） |
+| 9002 | 水飲み |
 
-## 変更履歴
+-----
+## 3. 変更履歴 <!-- omit in toc -->
 
 | 改定年月日   | 改定箇所 | 改定内容 |
 |--------------|----------|----------|
-| 2022年5月9日 | \-       | 初版決定 |
+| 2022年5月9日 | -       | 初版決定 |
