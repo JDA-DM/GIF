@@ -61,7 +61,7 @@
 
 (1)について、地理座標系として緯度・経度を有するものとし、各データは別のデータ項目で持った上で、10進表記で小数点以下6 桁とします。緯度・経度の測定基準である測地基準系は、JGD2011（日本測地系2011）またはITRF（国際地球基準座標系）とします。ITRFを用いる場合には、あわせて地殻変動の補正(https://positions.gsi.go.jp/cdcs/)が必要となります。なお、公共測量成果など、本書の示す標準以上に高精度でデータ連携が必要になる地理空間情報については、別途定められている定義に基づき、本書の対象とならないこととします。
 
-データ連携にあたって測地基準系や座標参照系の変換を行う場合があることから、データ内のメタデータにおいて使用する測地基準系や座標参照系を明記する必要があります。  
+データ連携にあたって測地基準系や座標参照系の変換を行う場合があることから、データ内のメタデータにおいて使用する測地基準系や座標参照系を明記する必要があります。
 3Ｄ都市データに関するデータ形式は　3Ｄ都市モデル標準製品仕様書に従うこととし、点群データについてはLASとします。また両形式で定義できない地理空間情報はGeoJSONとします。
 
 ### 1.1. ３Ｄ都市モデル標準製品仕様書
@@ -88,14 +88,17 @@ CityGMLモデルは、都市や地域モデルに関する地形オブジェク�
 
 CityGMLは広域から小地域まで広く適用可能であり、地形と3Dオブジェクトを異なる詳細度（Level of Detail: LoD）で表現することが可能になっています。意味をほとんど持たない単純なモデルから、詳細な意味情報や位相関係を含む非常に複雑なモデルまで表現できるため、CityGMLは異なる地理情報システム（GIS）やユーザの間で3D都市モデルを一貫して表現することを可能にします。
 
-CityGMLモデルは、地理参照された 3Dベクトルデータと、そのデータに付随するセマンティクスから構成される。他の3Dベクターフォーマットとは異なり、CityGMLはジオメトリや外観情報に加え、様々なソースデータを統合して都市モデルを作成することが可能になります。また、特定の領域でCityGMLを使用可能とするため、CityGMLではユーザがアプリケーションドメイン拡張（Application Domain Extension: ADE）として、相互運用性を維持したまま、識別可能な特徴や特性でデータを拡充する仕組みを持っており、CityGMLで定義されている構造物、道路、地形、橋梁、トンネル、土地利用、植生、水域以外についても定義を拡張可能になっています。CityGMLの概念モデルでは、Coreモジュール（図 1緑）と11のテーマ別拡張モジュール（図 1赤）を定義しています。図 1青の５つの拡張モジュールは他の拡張モジュールと組み合わせて使用します。
+CityGMLモデルは、地理参照された 3Dベクトルデータと、そのデータに付随するセマンティクスから構成される。
+他の3Dベクターフォーマットとは異なり、CityGMLはジオメトリや外観情報に加え、様々なソースデータを統合して都市モデルを作成することが可能になります。
+また、特定の領域でCityGMLを使用可能とするため、CityGMLではユーザがアプリケーションドメイン拡張（Application Domain Extension: ADE）として、相互運用性を維持したまま、識別可能な特徴や特性でデータを拡充する仕組みを持っており、CityGMLで定義されている構造物、道路、地形、橋梁、トンネル、土地利用、植生、水域以外についても定義を拡張可能になっています。
+CityGMLの概念モデルでは、Coreモジュール（図 1緑）と11のテーマ別拡張モジュール（図 1赤）を定義しています。図 1青の５つの拡張モジュールは他の拡張モジュールと組み合わせて使用します。
 
 <figure>
 <img src="452-2/media/image2.png" style="width:5.40252in;height:2.70126in" />
-<figcaption>
-図 1. CityGMLのデータモジュール[^1]
-</figcaption>
 </figure>
+
+図 1. CityGMLのデータモジュール[^1]
+
 
 表 1. CityGMLのテーマ別拡張モジュールとモデリング拡張
 
@@ -131,39 +134,34 @@ CityGMLでは、すべてのオブジェクトを空間と空間境界という�
 
 空間の定義を正確に表現するため、物理的空間と論理的空間に細分化します。
 
-<u>物理的空間</u>
-
-* 完全にまたは部分的に物理的な物体で区切られた空間
-     * 建物や部屋（壁やスラブで囲まれている）
-     * 道路の交通空間（地面に対して路面が接している）
-
-<u>論理的空間</u>
-
-* 必ずしも物理的なもので囲まれた空間ではなく、テーマに基づいて定義された空間。用途によっては、仮想的な境界で区切られ、物理的な空間の集合体として表現されることもある。
-     * 建物単位は、特定の部屋とフラットを集約した論理空間であり、部屋は壁面で囲まれた物理空間であるが、集約全体としては仮想境界で区切られている
-     * 行政境界線に囲まれた街区
-     * 空港のパブリックスペースとセキュリティゾーン
-     * 都市計画による特定の規制を受けた街区
+* 物理的空間
+     * 完全にまたは部分的に物理的な物体で区切られた空間
+          * 建物や部屋（壁やスラブで囲まれている）
+          * 道路の交通空間（地面に対して路面が接している）
+* 論理的空間
+     * 必ずしも物理的なもので囲まれた空間ではなく、テーマに基づいて定義された空間
+          * 用途によっては、仮想的な境界で区切られ、物理的な空間の集合体として表現されることもある。
+          * 建物単位は、特定の部屋とフラットを集約した論理空間であり、部屋は壁面で囲まれた物理空間であるが、集約全体としては仮想境界で区切られている
+          * 行政境界線に囲まれた街区
+          * 空港のパブリックスペースとセキュリティゾーン
+          * 都市計画による特定の規制を受けた街区
 
 物理的な空間は、さらに占有空間と非占有空間に分類されます。
 
-<u>占有空間（OccupiedSpace）</u>
-
-* 都市環境において空間を占める物理的な容積のオブジェクトを表す。占有空間とは、空間的な物体によって空間が遮断されていることを意味する
-     * 建物、橋、樹木、都市家具、水域など※
-
-<u>非占有空間（UnoccupiedSpace）</u>
-
-* 都市環境において空間を占有していない、物理的なオブジェクトを表す
-     * ビルの部屋
-     * 交通空間
+* 占有空間（OccupiedSpace）
+     * 都市環境において空間を占める物理的な容積のオブジェクトを表す。占有空間とは、空間的な物体によって空間が遮断されていることを意味する
+          * 建物、橋、樹木、都市家具、水域など※
+* 非占有空間（UnoccupiedSpace）
+     * 都市環境において空間を占有していない、物理的なオブジェクトを表す
+          * ビルの部屋
+          * 交通空間
 
 <figure>
 <img src="452-2/media/image3.png" style="width:6.26772in;height:2.70833in" />
-<figcaption>
-図 2. 占有空間と非専有空間[^2]
-</figcaption>
 </figure>
+
+図 2. 占有空間と非専有空間[^2]
+
 
 #### 1.2.3. Level of Detail (LOD)
 
@@ -183,33 +181,32 @@ CityGMLでは、オブジェクトの様々な幾何学的表現が可能なた�
 
 <figure>
 <img src="452-2/media/image4.png" style="width:5.18333in;height:0.94167in" />
-<figcaption>
-図 3. 建物に関するLODレベルのイメージ [^4]
-</figcaption>
 </figure>
+
+図 3. 建物に関するLODレベルのイメージ [^4]
+
+
 
 <figure>
 <img src="452-2/media/image5.png" style="width:5.0495in;height:3.17901in" />
-<figcaption>
-図 4. 建物に関するLODレベルのイメージ[^5]
-</figcaption>
 </figure>
+
+図 4. 建物に関するLODレベルのイメージ[^5]
 
 <figure>
 <img src="452-2/media/image6.png" style="width:5.44514in;height:1.73267in" />
-<figcaption>
-図 5. LOD別の建物のフロア表現：（左）LOD0, （右）LOD2: 屋内外を連結した表現（内壁＋外壁）[^6]
-</figcaption>
 </figure>
+
+図 5. LOD別の建物のフロア表現：（左）LOD0, （右）LOD2: 屋内外を連結した表現（内壁＋外壁）[^6]
 
 <figure>
 <img src="452-2/media/image7.png" style="width:5.24753in;height:3.0931in" />
-<figcaption>
-図 6. Data Encoding Specification of i-Urban Revitalization -Urban Planning ADE – ver.1.5[^7]
-</figcaption>
 </figure>
 
-#### 1.2.4. 土木構造物: Construcction 
+図 6. Data Encoding Specification of i-Urban Revitalization -Urban Planning ADE – ver.1.5[^7]
+
+
+#### 1.2.4. 土木構造物: Construcction
 
 ##### 1.2.4.1. 概要
 
@@ -221,10 +218,9 @@ Constructionでは家具、設備、構成要素の概念を定義していま�
 
 <figure>
 <img src="452-2/media/image8.png" style="width:5.20792in;height:5.49016in" />
-<figcaption>
-図 7. UML Diagram of the Construction Model[^8]
-</figcaption>
 </figure>
+
+図 7. UML Diagram of the Construction Model[^8]
 
 #### 1.2.5. 建物（内部）：Buidling & BuildingRoom
 
@@ -234,11 +230,9 @@ Buildingは、建物について空間的な側面を表現する。建物は屋
 
 <figure>
 <img src="452-2/media/image9.png" style="width:6.26772in;height:2.30556in" />
-<figcaption>
-図 8. BuildingRoomのLODによる表現の差異[^9]
-</figcaption>
 </figure>
 
+図 8. BuildingRoomのLODによる表現の差異[^9]
 ##### 1.2.5.2. データ構造と建物内・地下街・地下埋設物の表現
 
 建物内（部屋）を定義するBuildingRoomは前述のUnoccupiedSpaceのサブクラスとして定義され、空間境界となる壁・窓・天井・床で区切り、内部に設置物（BuildingFurniture）が配置されます。
@@ -249,11 +243,9 @@ Buildingは地下階数（storeyHeightsBelowGround）を記述する属性情報
 
 <figure>
 <img src="452-2/media/image10.png" style="width:6.26772in;height:4.36111in" />
-<figcaption>
-図 9. Building モジュールのURLモデル[^10]
-</figcaption>
 </figure>
 
+図 9. Building モジュールのURLモデル[^10]
 #### 1.2.6. トンネル： Tunnel
 
 ##### 1.2.6.1. 概要
@@ -268,11 +260,9 @@ Buildingは地下階数（storeyHeightsBelowGround）を記述する属性情報
 
 <figure>
 <img src="452-2/media/image11.png" style="width:6.26772in;height:4.30556in" />
-<figcaption>
-図 10. Tunnel モジュールのURLモデル[^11]
-</figcaption>
 </figure>
 
+図 10. Tunnel モジュールのURLモデル[^11]
 #### 1.2.7. 交通：Transportation
 
 ##### 1.2.7.1. 概要
@@ -287,49 +277,39 @@ Transportation は、交通インフラの中心的な要素を定義してい�
 
 <figure>
 <img src="452-2/media/image12.png" style="width:5.85149in;height:5.23762in" />
-<figcaption>
-図 11. TransportationモジュールのURLモデル[^12]
-</figcaption>
 </figure>
+
+図 11. TransportationモジュールのURLモデル[^12]
 
 <figure>
 <img src="452-2/media/image13.png" style="width:4.82178in;height:2.48955in" />
-<figcaption>
-図 12. TransportationComplex in LOD0-4(CityGML2.0)[^13]
-</figcaption>
 </figure>
+
+図 12. TransportationComplex in LOD0-4(CityGML2.0)[^13]
 
 <figure>
 <img src="452-2/media/image14.png" style="width:6.26772in;height:2.79167in" />
-<figcaption>
-図 13. Complex urban intersection in CityGML2.0[^14]
-</figcaption>
 </figure>
+
+図 13. Complex urban intersection in CityGML2.0[^14]
 
 参考資料
 
-1)  OGC, CityGML,   
+1)  OGC, CityGML,
     <https://www.ogc.org/standards/citygml>
-
-2)  OGC, City Geography Markup Language (CityGML) Part 1: Conceptual Model Standard,  
+2)  OGC, City Geography Markup Language (CityGML) Part 1: Conceptual Model Standard,
     <https://docs.ogc.org/is/20-010/20-010.htm>
-
-3)  OGC, Github: CityGML 3.0 Encodings,  
+3)  OGC, Github: CityGML 3.0 Encodings,
     <https://github.com/opengeospatial/CityGML-3.0Encodings>
-
-4)  国土交通省, 3D都市モデル標準製品仕様書, Series No1,  
+4)  国土交通省, 3D都市モデル標準製品仕様書, Series No1,
     <https://www.mlit.go.jp/plateau/file/libraries/doc/plateau_doc_0001_ver01.pdf>
-
-5)  国土交通省, 3D都市モデル標準製品仕様書, Series No2,  
+5)  国土交通省, 3D都市モデル標準製品仕様書, Series No2,
     <https://www.mlit.go.jp/plateau/file/libraries/doc/plateau_doc_0002_ver01.pdf>
-
-6)  東京都都市整備局, 都市の3Dデジタルマップのための データ製品仕様書（素案）の概要,  
+6)  東京都都市整備局, 都市の3Dデジタルマップのための データ製品仕様書（素案）の概要,
     <https://www.toshiseibi.metro.tokyo.lg.jp/bunyabetsu/machizukuri/pdf/digital04_3_3.pdf>
-
-7)  東京都都市整備局, CityGMLデータ定義標準・技術文書,  
+7)  東京都都市整備局, CityGMLデータ定義標準・技術文書,
     <https://www.toshiseibi.metro.tokyo.lg.jp/bunyabetsu/machizukuri/pdf/digital03_san01_1.pdf>
-
-8)  国土交通省, PLATEAU,  
+8)  国土交通省, PLATEAU,
     <https://www.mlit.go.jp/plateau/>
 
 ### 1.3. ｉ－都市再生技術仕様（案）
@@ -367,10 +347,9 @@ DRMデータに収録されている道路データには、経路探索可能�
 
 <figure>
 <img src="452-2/media/image15.png" style="width:5.00027in;height:3.50352in" />
-<figcaption>
-図 14. DRMデータのイメージ[^17]
-</figcaption>
 </figure>
+
+図 14. DRMデータのイメージ[^17]
 
 表 2. DRMデータの内容[^18]
 
@@ -405,26 +384,26 @@ DRMデータベース標準に基づいて、道路の区間ID方式（ISO17572:
 </figure>
 
 参考資料
-1)  DRMデータベース，  
+1)  DRMデータベース，
     <https://www.drm.jp/database/>
 
-2)  次世代デジタル道路地図のあり方に関する研究（国土技術政策総合研究所）  
-    <http://www.nilim.go.jp/lab/bcg/siryou/tnn/tnn0372.htm>    
+2)  次世代デジタル道路地図のあり方に関する研究（国土技術政策総合研究所）
+    <http://www.nilim.go.jp/lab/bcg/siryou/tnn/tnn0372.htm>
     <http://www.nilim.go.jp/lab/bcg/siryou/tnn/tnn0372pdf/ks0372.pdf>
 
-3)  国土交通省国土技術政策総合研究所、道路の区間IDを活用した位置参照方式の基本的考え方 Ver2.0,    
+3)  国土交通省国土技術政策総合研究所、道路の区間IDを活用した位置参照方式の基本的考え方 Ver2.0,
     <https://www.drm.jp/assets/pdf/roadsection-fundamental-ver2.pdf>
 
-4)  日本デジタル道路地図協会、道路の区間IDテーブル標準 ver 1.2，  
+4)  日本デジタル道路地図協会、道路の区間IDテーブル標準 ver 1.2，
     <https://www.drm.jp/assets/pdf/roadsection-standar-ver1.2.pdf>
 
-5)  今井龍一、有賀清隆、佐々木洋一、重高浩一, 道路関連情報の流通のための位置参照方式 ～道路の区間ID方式の確立～、土木技術資料 54-2(2012)  
+5)  今井龍一、有賀清隆、佐々木洋一、重高浩一, 道路関連情報の流通のための位置参照方式 ～道路の区間ID方式の確立～、土木技術資料 54-2(2012)
     <http://www.nilim.go.jp/lab/qbg/ronbun/H23_dogishi01.pdf>
 
-6)  日本デジタル道路地図道路協会、道路の区間IDテーブルの関連付け方法，  
+6)  日本デジタル道路地図道路協会、道路の区間IDテーブルの関連付け方法，
     <https://www.drm.jp/assets/pdf/Association-method-IDtable.pdf>
 
-7)  ISO 17572-4:2020, Intelligent transport systems (ITS) — Location referencing for geographic databases,   
+7)  ISO 17572-4:2020, Intelligent transport systems (ITS) — Location referencing for geographic databases,
     <https://www.iso.org/standard/72984.html>
 
 ### 1.6. 国土数値情報
@@ -581,7 +560,7 @@ DRMデータベース標準に基づいて、道路の区間ID方式（ISO17572:
      * 貨物旅客地域流動量（ポリゴン）（ライン）
      * 5\. 各種統計 arrow_drop_down
 
-### 1.7. GTFS (General Transit Feed Specification) 
+### 1.7. GTFS (General Transit Feed Specification)
 
 #### 1.7.1. GTFSの概要
 
@@ -657,28 +636,28 @@ CSV形式で提供される静的GTFSファイルの種類は下記表の通り�
 
 表 5. 標準的なバス情報フォーマット（GTFS-JP）のファイル構成（ + はファイルの拡張追加分）
 
-| No   | File                | Note                                             |
-|------|---------------------|--------------------------------------------------|
-| 1    | agency.txt          | 必須。交通機関の基本情報                         |
-| +1.1 | agency_jp.txt       | 追加。交通事業者の追加情報。例：事業者登録情報等 |
-| 2    | stops.txt           | 必須。交通機関の停車地。例：バス停、鉄道駅など   |
-| 3    | routes.txt          | 必須。交通機関のルート情報                       |
-| +3.1 | routes_jp.txt       | 追加。交通機関ルート追加情報。例：起点・終点等   |
-| 4    | trips.txt           | 必須。交通機関の旅程情報                         |
-| +4.1 | office_jp.txt       | 追加。営業所情報。例：営業所の連絡先等           |
-| 5    | stop_times.txt      | 必須。交通機関の停車時刻                         |
-| 6    | calendar.txt        | 必須。曜日別運行区分                             |
-| 7    | calendar_dates.txt  | 日付別運行区分                                   |
-| 8    | fare_attributes.txt | 推奨：運賃属性情報。通貨単位や支払方法           |
-| 9    | fare_rules.txt      | 推奨：運賃定義情報。距離別運賃の場合の定義       |
-| 10   | shapes.txt          | 運行ルートの幾何情報                             |
-| 11   | frequencies.txt     | 運行間隔情報                                     |
-| 12   | transfers.txt       | 乗換情報                                         |
-| 13   | pathways.txt        | なし                                             |
-| 14   | levels.txt          | なし                                             |
-| 15   | translations.txt    | 翻訳情報                                         |
-| 16   | feed_info.txt       | 必須。データ公開組織情報                         |
-| 17   | attributions.txt    | データ帰属情報                                   |
+| No | File | Note |
+|---|---|---|
+| 1 | agency.txt | 必須。交通機関の基本情報 |
+| +1.1 | agency_jp.txt | 追加。交通事業者の追加情報。例：事業者登録情報等 |
+| 2 | stops.txt | 必須。交通機関の停車地。例：バス停、鉄道駅など |
+| 3 | routes.txt | 必須。交通機関のルート情報 |
+| +3.1 | routes_jp.txt | 追加。交通機関ルート追加情報。例：起点・終点等 |
+| 4 | trips.txt | 必須。交通機関の旅程情報 |
+| +4.1 | office_jp.txt | 追加。営業所情報。例：営業所の連絡先等 |
+| 5 | stop_times.txt | 必須。交通機関の停車時刻 |
+| 6 | calendar.txt | 必須。曜日別運行区分 |
+| 7 | calendar_dates.txt | 日付別運行区分 |
+| 8 | fare_attributes.txt | 推奨：運賃属性情報。通貨単位や支払方法 |
+| 9 | fare_rules.txt | 推奨：運賃定義情報。距離別運賃の場合の定義 |
+| 10 | shapes.txt | 運行ルートの幾何情報 |
+| 11 | frequencies.txt | 運行間隔情報 |
+| 12 | transfers.txt | 乗換情報 |
+| 13 | pathways.txt | なし |
+| 14 | levels.txt | なし |
+| 15 | translations.txt | 翻訳情報 |
+| 16 | feed_info.txt | 必須。データ公開組織情報 |
+| 17 | attributions.txt | データ帰属情報 |
 
 ##### 1.7.3.2. 鉄道
 
@@ -690,52 +669,44 @@ CSV形式で提供される静的GTFSファイルの種類は下記表の通り�
 
 表 6. 標準的なフェリー・旅客船航路情報フォーマットのファイル構成（ + はファイルの拡張追加分）
 
-| No   | File                        | Note                                         |
-|------|-----------------------------|----------------------------------------------|
-| 1    | agency.txt                  | 必須。運航事業者の基本情報                   |
-| 2    | stops.txt                   | 必須。港の情報                               |
-| 3    | routes.txt                  | 必須。航路の情報                             |
-| 4    | trips.txt                   | 必須。運航便の情報                           |
-| 5    | stop_times.txt              | 必須。運航便の時刻情報                       |
-| 6    | calendar.txt                | 必須。曜日別運行情報                         |
-| 7    | calendar_dates.txt          | 条件付き必須。日付別運行情報                 |
-| 8    | fare_attributes.txt         | 必須。乗船客の支払う運賃情報                 |
-| 9    | fare_rules.txt              | 必須。船賃を特定するルール情報               |
+| No | File | Note |
+|---|---|---|
+| 1 | agency.txt | 必須。運航事業者の基本情報 |
+| 2 | stops.txt | 必須。港の情報 |
+| 3 | routes.txt | 必須。航路の情報 |
+| 4 | trips.txt | 必須。運航便の情報 |
+| 5 | stop_times.txt | 必須。運航便の時刻情報 |
+| 6 | calendar.txt | 必須。曜日別運行情報 |
+| 7 | calendar_dates.txt | 条件付き必須。日付別運行情報 |
+| 8 | fare_attributes.txt | 必須。乗船客の支払う運賃情報 |
+| 9 | fare_rules.txt | 必須。船賃を特定するルール情報 |
 | +9.1 | payload_fare_attributes.txt | 必須。車両や特殊手荷物を持ち込む際の追加運賃 |
-| +9.2 | payload_fare_rules.txt      | 必須。車両や特殊手荷物の持込追加運賃ルール   |
-| 10   | shapes.txt                  | 必須。海図上の航行ルート                     |
-| 11   | frequencies.txt             | 運行間隔情報                                 |
-| 12   | transfers.txt               | 乗換情報                                     |
-| 13   | pathways.txt                | 港施設の案内用のグラフデータ                 |
-| 14   | levels.txt                  | pathways.txtとセットで港施設の階層を表す     |
-| 15   | translations.txt            | 必須。翻訳情報                               |
-| 16   | feed_info.txt               | 必須。データ公開組織情報                     |
-| 17   | attributions.txt            | データ帰属情報                               |
-| +18  | payload.txt                 | 必須。乗船客以外の持込情報（車両・二輪車等） |
-| +19  | ships.txt                   | 必須。船舶のスペック（例：船舶容量等）       |
+| +9.2 | payload_fare_rules.txt | 必須。車両や特殊手荷物の持込追加運賃ルール |
+| 10 | shapes.txt | 必須。海図上の航行ルート |
+| 11 | frequencies.txt | 運行間隔情報 |
+| 12 | transfers.txt | 乗換情報 |
+| 13 | pathways.txt | 港施設の案内用のグラフデータ |
+| 14 | levels.txt | pathways.txtとセットで港施設の階層を表す |
+| 15 | translations.txt | 必須。翻訳情報 |
+| 16 | feed_info.txt | 必須。データ公開組織情報 |
+| 17 | attributions.txt | データ帰属情報 |
+| +18 | payload.txt | 必須。乗船客以外の持込情報（車両・二輪車等） |
+| +19 | ships.txt | 必須。船舶のスペック（例：船舶容量等） |
 
 参考資料
 
 1)  General Transit Feed Specification (GTFS), <https://developers.google.com/transit>
-
 2)  GTFS.org, <https://gtfs.org/>
-
 3)  MobilityData, <https://mobilitydata.org/>
-
 4)  TransitFeeds, https://transitfeeds.com/feeds
-
-5)  Google ヘルプ、Google 乗換案内にデータを登録する，  
+5)  Google ヘルプ、Google 乗換案内にデータを登録する，
     <https://support.google.com/transitpartners/answer/1111481>
-
 6)  国土交通省総合政策局公共交通政策部、静的バス情報フォーマット（GTFS-JP）仕様書（第２版）, <https://www.mlit.go.jp/common/001283244.pdf>
-
 7)  東京都、都営バスのニュース【報道発表】, <https://www.kotsu.metro.tokyo.jp/pickup_information/news/bus/2020/bus_p_202008179276_h.html>
-
-8)  公共交通オープンデータセンター、都バスGTFS-RT,  
+8)  公共交通オープンデータセンター、都バスGTFS-RT,
     <https://ckan.odpt.org/dataset/b_bus_gtfs_rt-toei>
-
 9)  公共交通オープンデータセンター、<https://www.odpt.org/>
-10) 国土交通省海事局内航課、標準的なフェリー・旅客船航路情報フォーマットVer.2，  
+10) 国土交通省海事局内航課、標準的なフェリー・旅客船航路情報フォーマットVer.2，
    <https://www.mlit.go.jp/maritime/maritime_tk3_000061.html>
 
 -----
@@ -887,7 +858,7 @@ GSM方式のモバイルシステムの視点から作成したデータモデ�
 
 ### 2.10. Schema.org
 
-Webサーチのためのデータモデル。社会のほとんどのものを表現できます。[^33]  
+Webサーチのためのデータモデル。社会のほとんどのものを表現できます。[^33]
 ただし、コントロールド・ボキャブラリ（データ項目内で選択肢があるときの候補）など分野固有部分まで詳細化はしていません
 
 <figure>
@@ -897,67 +868,35 @@ Webサーチのためのデータモデル。社会のほとんどのものを�
 </figure>
 
 [^1]: https://docs.ogc.org/is/20-010/20-010.html
-
 [^2]: https://docs.ogc.org/is/20-010/20-010.html
-
 [^3]: https://www.mlit.go.jp/plateau/learning/
-
 [^4]: https://docs.ogc.org/is/20-010/20-010.html
-
 [^5]: https://portal.ogc.org/files/?artifact_id=47842
-
 [^6]: https://docs.ogc.org/is/20-010/20-010.html
-
 [^7]: ttps://www.chisou.go.jp/tiiki/toshisaisei/itoshisaisei/iur/index.html
-
 [^8]: https://docs.ogc.org/is/20-010/20-010.html#construction-uml
-
 [^9]: https://docs.ogc.org/is/20-010/20-010.html
-
 [^10]: https://docs.ogc.org/is/20-010/20-010.html
-
 [^11]: https://docs.ogc.org/is/20-010/20-010.html
-
 [^12]: https://docs.ogc.org/is/20-010/20-010.html
-
 [^13]: https://portal.ogc.org/files/?artifact_id=47842
-
 [^14]: https://portal.ogc.org/files/?artifact_id=47842
-
 [^15]: https://www.chisou.go.jp/tiiki/toshisaisei/itoshisaisei/iur/index.html
-
 [^16]: https://www1.gsi.go.jp/common/000219958.pdf
-
 [^17]: https://www.drm.jp/database/content/
-
 [^18]: https://www.drm.jp/database/content/
-
 [^19]: 道路の区間IDテーブル標準Ver1.2
-
 [^20]: Wikipedia、https://en.wikipedia.org/wiki/General_Transit_Feed_Specification
-
 [^21]: https://www.odpt.org/
-
 [^22]: https://tokyochallenge.odpt.org/
-
 [^23]: 海外の事例:https://transitfeeds.com/feeds
-
 [^24]: 静的バス情報フォーマット（GTFS-JP）仕様書第２版
-
 [^25]: https://imi.go.jp/ns/core/Core242.html
-
 [^26]: https://cio.go.jp/policy-opendata
-
 [^27]: https://smartdatamodels.org/
-
 [^28]: https://fiware-datamodels.readthedocs.io/en/latest/index.html
-
 [^29]: https://www.smartsdk.eu/wp-content/uploads/sites/8/2019/01/SmartSDK-D2.4v1.0.pdf
-
 [^30]: http://www.openmobilealliance.org/wp/omna/lwm2m/lwm2mregistry.html
-
 [^31]: https://www.gsma.com/iot/wp-content/uploads/2018/11/CLP.26-v6.0.pdf
-
 [^32]: https://www.w3.org/TR/vocab-ssn/
-
 [^33]: https://schema.org/docs/full.html
