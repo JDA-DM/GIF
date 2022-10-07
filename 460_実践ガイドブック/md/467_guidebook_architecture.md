@@ -18,15 +18,15 @@
 本ペーパーでは、アーキテクチャ作成や活用の考え方を示すとともに、その導入方法を説明します。
 
 -----
-## 改定履歴 <!-- omit in toc -->
+## 改訂履歴 <!-- omit in toc -->
 
-| 改定年月日    | 改定箇所 | 改定内容 |
+| 改訂年月日    | 改訂箇所 | 改訂内容 |
 |---------------|----------|----------|
 | 2022年3月31日 | -        | 初版決定 |
 
 -----
 ## 目次 <!-- omit in toc -->
-
+- [- 5. アーキテクチャ全体俯瞰図から詳細化の実施](#--5-アーキテクチャ全体俯瞰図から詳細化の実施)
 - [1. 背景と目的](#1-背景と目的)
   - [1.1. 背景](#11-背景)
   - [1.2. 目的](#12-目的)
@@ -114,7 +114,7 @@
 ### 1.4. 用語の定義
 
 * アーキテクチャ全体俯瞰図
- 
+
    ある目的を実現するための全体像を表す考え方であり、レイヤー構造を持ち、機能など目的に応じて分割したエレメント（部品）の組合せで表現します。
 
 * レイヤー
@@ -149,21 +149,13 @@
 よって、アーキテクチャ全体俯瞰図は、以下のレイヤー構成で記述します。
 
 * 戦略
-
 * 組織
-
 * 業務（サービス）
-
 * ルール
-
 * 利活用環境
-
 * 連携基盤（ツール）
-
 * データ
-
 * データ標準
-
 * インフラ
 
 ### 2.2. 各エレメント、リレーションの定義及び使用例の整理
@@ -174,86 +166,86 @@ ArchiMate(R)には多くのエレメントが定義されていますが、Stake
 
 また、灰色のエレメントは、使用を推奨しないエレメントとなりますが、記述を明確にするうえで必要な場合には使用可能とします。
 
-| No. | エレメント                                                                   | 定義                                                                         | 使用例                                   |
-|:----|:-----------------------------------------------------------------------------|:-----------------------------------------------------------------------------|:-----------------------------------------|
-| 1   | <img src="467/media/image4.png" style="width:1.37292in;height:0.66389in" />  | 関係者、戦略・ルールレイヤーで使用。                                         |                                          |
-| 2   | <img src="467/media/image5.png" style="width:1.38819in;height:0.67844in" />  | ゴールやアウトカム等を実現するためのドライバー、戦略・ルールレイヤーで使用。 |                                          |
-| 3   | <img src="467/media/image6.png" style="width:1.41806in;height:0.70139in" />  | 戦略を推進するために必要なアセスメント、戦略・ルールレイヤーで使用。         |                                          |
-| 4   | <img src="467/media/image7.png" style="width:1.38819in;height:0.66389in" />  | 、戦略・ルールレイヤーで使用。                                               | 戦略等に明記されている目標               |
-| 5   | <img src="467/media/image8.png" style="width:1.40278in;height:0.66389in" />  | ゴールを実現するための具体的な成果、戦略・ルールレイヤーで使用。             |                                          |
-| 6   | <img src="467/media/image9.png" style="width:1.36597in;height:0.70903in" />  | 原理・原則、戦略・ルールレイヤーで使用。                                     |                                          |
-| 7   | <img src="467/media/image10.png" style="width:1.3125in;height:0.60417in" />  | 要求、戦略・ルールレイヤーで使用。                                           | 法律や制度、提言等                       |
-| 8   | <img src="467/media/image11.png" style="width:1.35069in;height:0.71667in" /> | 制約、戦略・ルールレイヤーで使用。                                           | 法律や制度                               |
-| 9   | <img src="467/media/image12.png" style="width:1.33611in;height:0.66389in" /> | 意味、戦略・ルールレイヤーで使用。                                           |                                          |
-| 10  | <img src="467/media/image13.png" />                                          | 価値、戦略・ルールレイヤーで使用。                                           |                                          |
-| 11  | <img src="467/media/image14.png" style="width:1.33611in;height:0.66389in" /> | 動作する人、業務（サービス）レイヤーで使用。                                 |                                          |
-| 12  | <img src="467/media/image15.png" style="width:1.34306in;height:0.67917in" /> | 業務ロール、業務（サービス）レイヤーで使用。                                 |                                          |
-| 13  | <img src="467/media/image16.png" style="width:1.32083in;height:0.66389in" /> | ※使用を推奨しないコンポーネント                                             |                                          |
-| 14  | <img src="467/media/image17.png" style="width:1.34306in;height:0.65694in" /> | 業務インターフェース、業務（サービス）レイヤーで使用。                       | 端末、スマートフォン等                   |
-| 15  | <img src="467/media/image18.png" style="width:1.36597in;height:0.65694in" /> | 業務プロセス、業務（サービス）レイヤーで使用。                               |                                          |
-| 16  | <img src="467/media/image19.png" style="width:1.33611in;height:0.65694in" /> | 業務機能、業務（サービス）レイヤーで使用。                                   |                                          |
-| 17  | <img src="467/media/image20.png" style="width:1.32083in;height:0.64931in" /> | ※使用を推奨しないコンポーネント                                             |                                          |
-| 18  | <img src="467/media/image21.png" style="width:1.34306in;height:0.66389in" /> | ※使用を推奨しないコンポーネント                                             |                                          |
-| 19  | <img src="467/media/image22.png" style="width:1.35069in;height:0.64931in" /> | 業務サービス、業務（サービス）レイヤーで使用。                               |                                          |
-| 20  | <img src="467/media/image23.png" style="width:1.32083in;height:0.65694in" /> | 業務オブジェクト、ルール・データ標準レイヤーで使用。                         | 法律、制度で定められた標準、データモデル |
-| 21  | <img src="467/media/image24.png" style="width:1.35069in;height:0.66389in" /> | 契約、業務（サービス）レイヤーで使用。                                       |                                          |
-| 22  | <img src="467/media/image25.png" style="width:1.33611in;height:0.65694in" /> | 表現、業務（サービス）レイヤーで使用。                                       | 申請、証明データ                         |
-| 23  | <img src="467/media/image26.png" style="width:1.32083in;height:0.67917in" /> | ※使用を推奨しないコンポーネント                                             |                                          |
-| 24  | <img src="467/media/image27.png" style="width:1.34375in;height:0.68819in" /> | 内部サービス、連携基盤（ツール）レイヤーで使用。                             |                                          |
-| 25  | <img src="467/media/image28.png" style="width:1.34375in;height:0.65625in" /> | ※使用を推奨しないコンポーネント                                             |                                          |
-| 26  | <img src="467/media/image29.png" style="width:1.30417in;height:0.65625in" /> | インターフェース、連携基盤（ツール）レイヤーで使用。                         | API                                      |
-| 27  | <img src="467/media/image30.png" style="width:1.33611in;height:0.66389in" /> | ※使用を推奨しないコンポーネント                                             |                                          |
-| 28  | <img src="467/media/image31.png" style="width:1.33611in;height:0.64792in" /> | ※使用を推奨しないコンポーネント                                             |                                          |
-| 29  | <img src="467/media/image32.png" style="width:1.32014in;height:0.64792in" /> | ※使用を推奨しないコンポーネント                                             |                                          |
-| 30  | <img src="467/media/image33.png" style="width:1.35208in;height:0.65625in" /> | ※使用を推奨しないコンポーネント                                             |                                          |
-| 31  | <img src="467/media/image34.png" style="width:1.31181in;height:0.66389in" /> | 外部サービス、サービス単独で動作するもの、利活用環境レイヤーで使用。         | 認証、決済                               |
-| 32  | <img src="467/media/image35.png" style="width:1.34375in;height:0.67986in" /> | データオブジェクト、データレイヤーで使用。                                   | 交通データ、登記データ                   |
-| 33  | <img src="467/media/image36.png" style="width:1.37708in;height:0.67917in" /> | ノード、インフラレイヤーで使用。                                             | 端末やセンサー                           |
-| 34  | <img src="467/media/image37.png" style="width:1.36806in;height:0.67014in" /> | ※使用を推奨しないコンポーネント                                             |                                          |
-| 35  | <img src="467/media/image38.png" style="width:1.32986in;height:0.67014in" /> | ※使用を推奨しないコンポーネント                                             |                                          |
-| 36  | <img src="467/media/image39.png" style="width:1.32986in;height:0.67014in" /> | ※使用を推奨しないコンポーネント                                             |                                          |
-| 37  | <img src="467/media/image40.png" style="width:1.32986in;height:0.64167in" /> | ※使用を推奨しないコンポーネント                                             |                                          |
-| 38  | <img src="467/media/image41.png" style="width:1.32986in;height:0.64167in" /> | ※使用を推奨しないコンポーネント                                             |                                          |
-| 39  | <img src="467/media/image42.png" style="width:1.32083in;height:0.64167in" /> | ネットワーク、インフラレイヤーで使用。                                       | 5G                                       |
-| 40  | <img src="467/media/image43.png" style="width:1.32986in;height:0.64167in" /> | ※使用を推奨しないコンポーネント                                             |                                          |
-| 41  | <img src="467/media/image44.png" style="width:1.32083in;height:0.66042in" /> | ※使用を推奨しないコンポーネント                                             |                                          |
-| 42  | <img src="467/media/image45.png" style="width:1.32083in;height:0.63194in" /> | ※使用を推奨しないコンポーネント                                             |                                          |
-| 43  | <img src="467/media/image46.png" style="width:1.31111in;height:0.63194in" /> | ※使用を推奨しないコンポーネント                                             |                                          |
-| 44  | <img src="467/media/image47.png" style="width:1.32986in;height:0.63194in" /> | ※使用を推奨しないコンポーネント                                             |                                          |
-| 45  | <img src="467/media/image48.png" style="width:1.32083in;height:0.64167in" /> | ※使用を推奨しないコンポーネント                                             |                                          |
-| 46  | <img src="467/media/image49.png" style="width:1.31111in;height:0.67917in" /> | ※使用を推奨しないコンポーネント                                             |                                          |
-| 47  | <img src="467/media/image50.png" style="width:1.32083in;height:0.66042in" /> | 設備、インフラレイヤーで使用。                                               |                                          |
-| 48  | <img src="467/media/image51.png" style="width:1.32083in;height:0.66042in" /> | ※使用を推奨しないコンポーネント                                             |                                          |
-| 49  | <img src="467/media/image52.png" style="width:1.29236in;height:0.64167in" /> | ※使用を推奨しないコンポーネント                                             |                                          |
-| 50  | <img src="467/media/image53.png" style="width:1.34722in;height:0.6875in" />  | パック化されたコンセプチュアルなまとまり、全レイヤーで使用。                 |                                          |
-| 51  | <img src="467/media/image54.png" style="width:1.33333in;height:0.68056in" /> | 場所、ルールレイヤーで使用。                                                 | 地域                                     |
-| 52  | <img src="467/media/image55.png" style="width:1.33333in;height:0.68056in" /> | メモ、全レイヤーで使用。                                                     |                                          |
-| 53  | <img src="467/media/image56.png" style="width:1.3125in;height:0.63889in" />  | レイヤーの枠、類似の分類、全レイヤーで使用。                                 |                                          |
-| 54  | <img src="467/media/image57.png" style="width:1.30556in;height:0.66667in" /> | ※使用を推奨しないコンポーネント                                             |                                          |
-| 55  | <img src="467/media/image58.png" style="width:1.32639in;height:0.68056in" /> | ※使用を推奨しないコンポーネント                                             |                                          |
-| 56  | <img src="467/media/image59.png" style="width:1.34722in;height:0.68056in" /> | ※使用を推奨しないコンポーネント                                             |                                          |
-| 57  | <img src="467/media/image60.png" style="width:1.33333in;height:0.66667in" /> | ※使用を推奨しないコンポーネント                                             |                                          |
-| 58  | <img src="467/media/image61.png" style="width:1.34722in;height:0.66667in" /> | ギャップ（現状とのずれを記入）、全レイヤーで使用                             |                                          |
-| 59  | <img src="467/media/image62.png" style="width:1.33333in;height:0.66667in" /> | リソース、組織レイヤーで使用                                                 | 府省、人                                 |
-| 60  | <img src="467/media/image63.png" style="width:1.34722in;height:0.66667in" /> | ※使用を推奨しないコンポーネント                                             |                                          |
-| 61  | <img src="467/media/image64.png" style="width:1.3125in;height:0.63889in" />  | ※使用を推奨しないコンポーネント                                             |                                          |
-| 62  | <img src="467/media/image65.png" style="width:1.3125in;height:0.64583in" />  | 行動指針、組織レイヤーで使用                                                 | ロードマップ、方針                       |
+| No. | エレメント | 定義 | 使用例 |
+|:---|:---|:---|:---|
+| 1 | <img src="467/media/image4.png" style="width:1.37292in;height:0.66389in" /> | 関係者、戦略・ルールレイヤーで使用。 | |
+| 2 | <img src="467/media/image5.png" style="width:1.38819in;height:0.67844in" /> | ゴールやアウトカム等を実現するためのドライバー、戦略・ルールレイヤーで使用。 | |
+| 3 | <img src="467/media/image6.png" style="width:1.41806in;height:0.70139in" /> | 戦略を推進するために必要なアセスメント、戦略・ルールレイヤーで使用。 | |
+| 4 | <img src="467/media/image7.png" style="width:1.38819in;height:0.66389in" /> | 戦略・ルールレイヤーで使用。 | 戦略等に明記されている目標 |
+| 5 | <img src="467/media/image8.png" style="width:1.40278in;height:0.66389in" /> | ゴールを実現するための具体的な成果、戦略・ルールレイヤーで使用。 | |
+| 6 | <img src="467/media/image9.png" style="width:1.36597in;height:0.70903in" /> | 原理・原則、戦略・ルールレイヤーで使用。 | |
+| 7 | <img src="467/media/image10.png" style="width:1.3125in;height:0.60417in" /> | 要求、戦略・ルールレイヤーで使用。 | 法律や制度、提言等 |
+| 8 | <img src="467/media/image11.png" style="width:1.35069in;height:0.71667in" /> | 制約、戦略・ルールレイヤーで使用。 | 法律や制度 |
+| 9 | <img src="467/media/image12.png" style="width:1.33611in;height:0.66389in" /> | 意味、戦略・ルールレイヤーで使用。 | |
+| 10 | <img src="467/media/image13.png" /> | 価値、戦略・ルールレイヤーで使用。 | |
+| 11 | <img src="467/media/image14.png" style="width:1.33611in;height:0.66389in" /> | 動作する人、業務（サービス）レイヤーで使用。 | |
+| 12 | <img src="467/media/image15.png" style="width:1.34306in;height:0.67917in" /> | 業務ロール、業務（サービス）レイヤーで使用。 | |
+| 13 | <img src="467/media/image16.png" style="width:1.32083in;height:0.66389in" /> | ※使用を推奨しないコンポーネント | |
+| 14 | <img src="467/media/image17.png" style="width:1.34306in;height:0.65694in" /> | 業務インターフェース、業務（サービス）レイヤーで使用。 | 端末、スマートフォン等 |
+| 15 | <img src="467/media/image18.png" style="width:1.36597in;height:0.65694in" /> | 業務プロセス、業務（サービス）レイヤーで使用。 | |
+| 16 | <img src="467/media/image19.png" style="width:1.33611in;height:0.65694in" /> | 業務機能、業務（サービス）レイヤーで使用。 | |
+| 17 | <img src="467/media/image20.png" style="width:1.32083in;height:0.64931in" /> | ※使用を推奨しないコンポーネント | |
+| 18 | <img src="467/media/image21.png" style="width:1.34306in;height:0.66389in" /> | ※使用を推奨しないコンポーネント | |
+| 19 | <img src="467/media/image22.png" style="width:1.35069in;height:0.64931in" /> | 業務サービス、業務（サービス）レイヤーで使用。 | |
+| 20 | <img src="467/media/image23.png" style="width:1.32083in;height:0.65694in" /> | 業務オブジェクト、ルール・データ標準レイヤーで使用。 | 法律、制度で定められた標準、データモデル |
+| 21 | <img src="467/media/image24.png" style="width:1.35069in;height:0.66389in" /> | 契約、業務（サービス）レイヤーで使用。 | |
+| 22 | <img src="467/media/image25.png" style="width:1.33611in;height:0.65694in" /> | 表現、業務（サービス）レイヤーで使用。 | 申請、証明データ |
+| 23 | <img src="467/media/image26.png" style="width:1.32083in;height:0.67917in" /> | ※使用を推奨しないコンポーネント | |
+| 24 | <img src="467/media/image27.png" style="width:1.34375in;height:0.68819in" /> | 内部サービス、連携基盤（ツール）レイヤーで使用。 | |
+| 25 | <img src="467/media/image28.png" style="width:1.34375in;height:0.65625in" /> | ※使用を推奨しないコンポーネント | |
+| 26 | <img src="467/media/image29.png" style="width:1.30417in;height:0.65625in" /> | インターフェース、連携基盤（ツール）レイヤーで使用。 | API |
+| 27 | <img src="467/media/image30.png" style="width:1.33611in;height:0.66389in" /> | ※使用を推奨しないコンポーネント | |
+| 28 | <img src="467/media/image31.png" style="width:1.33611in;height:0.64792in" /> | ※使用を推奨しないコンポーネント | |
+| 29 | <img src="467/media/image32.png" style="width:1.32014in;height:0.64792in" /> | ※使用を推奨しないコンポーネント | |
+| 30 | <img src="467/media/image33.png" style="width:1.35208in;height:0.65625in" /> | ※使用を推奨しないコンポーネント | |
+| 31 | <img src="467/media/image34.png" style="width:1.31181in;height:0.66389in" /> | 外部サービス、サービス単独で動作するもの、利活用環境レイヤーで使用。 | 認証、決済 |
+| 32 | <img src="467/media/image35.png" style="width:1.34375in;height:0.67986in" /> | データオブジェクト、データレイヤーで使用。 | 交通データ、登記データ |
+| 33 | <img src="467/media/image36.png" style="width:1.37708in;height:0.67917in" /> | ノード、インフラレイヤーで使用。 | 端末やセンサー |
+| 34 | <img src="467/media/image37.png" style="width:1.36806in;height:0.67014in" /> | ※使用を推奨しないコンポーネント | |
+| 35 | <img src="467/media/image38.png" style="width:1.32986in;height:0.67014in" /> | ※使用を推奨しないコンポーネント | |
+| 36 | <img src="467/media/image39.png" style="width:1.32986in;height:0.67014in" /> | ※使用を推奨しないコンポーネント | |
+| 37 | <img src="467/media/image40.png" style="width:1.32986in;height:0.64167in" /> | ※使用を推奨しないコンポーネント | |
+| 38 | <img src="467/media/image41.png" style="width:1.32986in;height:0.64167in" /> | ※使用を推奨しないコンポーネント | |
+| 39 | <img src="467/media/image42.png" style="width:1.32083in;height:0.64167in" /> | ネットワーク、インフラレイヤーで使用。 | 5G |
+| 40 | <img src="467/media/image43.png" style="width:1.32986in;height:0.64167in" /> | ※使用を推奨しないコンポーネント | |
+| 41 | <img src="467/media/image44.png" style="width:1.32083in;height:0.66042in" /> | ※使用を推奨しないコンポーネント | |
+| 42 | <img src="467/media/image45.png" style="width:1.32083in;height:0.63194in" /> | ※使用を推奨しないコンポーネント | |
+| 43 | <img src="467/media/image46.png" style="width:1.31111in;height:0.63194in" /> | ※使用を推奨しないコンポーネント | |
+| 44 | <img src="467/media/image47.png" style="width:1.32986in;height:0.63194in" /> | ※使用を推奨しないコンポーネント | |
+| 45 | <img src="467/media/image48.png" style="width:1.32083in;height:0.64167in" /> | ※使用を推奨しないコンポーネント | |
+| 46 | <img src="467/media/image49.png" style="width:1.31111in;height:0.67917in" /> | ※使用を推奨しないコンポーネント | |
+| 47 | <img src="467/media/image50.png" style="width:1.32083in;height:0.66042in" /> | 設備、インフラレイヤーで使用。 | |
+| 48 | <img src="467/media/image51.png" style="width:1.32083in;height:0.66042in" /> | ※使用を推奨しないコンポーネント | |
+| 49 | <img src="467/media/image52.png" style="width:1.29236in;height:0.64167in" /> | ※使用を推奨しないコンポーネント | |
+| 50 | <img src="467/media/image53.png" style="width:1.34722in;height:0.6875in" /> | パック化されたコンセプチュアルなまとまり、全レイヤーで使用。 | |
+| 51 | <img src="467/media/image54.png" style="width:1.33333in;height:0.68056in" /> | 場所、ルールレイヤーで使用。 | 地域 |
+| 52 | <img src="467/media/image55.png" style="width:1.33333in;height:0.68056in" /> | メモ、全レイヤーで使用。 | |
+| 53 | <img src="467/media/image56.png" style="width:1.3125in;height:0.63889in" /> | レイヤーの枠、類似の分類、全レイヤーで使用。 | |
+| 54 | <img src="467/media/image57.png" style="width:1.30556in;height:0.66667in" /> | ※使用を推奨しないコンポーネント | |
+| 55 | <img src="467/media/image58.png" style="width:1.32639in;height:0.68056in" /> | ※使用を推奨しないコンポーネント | |
+| 56 | <img src="467/media/image59.png" style="width:1.34722in;height:0.68056in" /> | ※使用を推奨しないコンポーネント | |
+| 57 | <img src="467/media/image60.png" style="width:1.33333in;height:0.66667in" /> | ※使用を推奨しないコンポーネント | |
+| 58 | <img src="467/media/image61.png" style="width:1.34722in;height:0.66667in" /> | ギャップ（現状とのずれを記入）、全レイヤーで使用 | |
+| 59 | <img src="467/media/image62.png" style="width:1.33333in;height:0.66667in" /> | リソース、組織レイヤーで使用 | 府省、人 |
+| 60 | <img src="467/media/image63.png" style="width:1.34722in;height:0.66667in" /> | ※使用を推奨しないコンポーネント | |
+| 61 | <img src="467/media/image64.png" style="width:1.3125in;height:0.63889in" /> | ※使用を推奨しないコンポーネント | |
+| 62 | <img src="467/media/image65.png" style="width:1.3125in;height:0.64583in" /> | 行動指針、組織レイヤーで使用 | ロードマップ、方針 |
 
 また、リレーションは、以下を使用し、わからない場合にはAssociationで関連付けます。
 
-| No. | リレーション                                                                 | 定義                                                                                                                          |
-|:----|:-----------------------------------------------------------------------------|:------------------------------------------------------------------------------------------------------------------------------|
-| 1   | <img src="467/media/image66.png" style="width:1.82153in;height:0.25278in" /> | コンポジット（UMLと同義）、「全体」と「その全体の部分」の関係、全体エレメントの中に部分エレメントを入れて表現することを推奨。 |
-| 2   | <img src="467/media/image67.png" style="width:1.84167in;height:0.2625in" />  | データ等を収集するときに使用する。                                                                                            |
-| 3   | <img src="467/media/image68.png" style="width:1.79236in;height:0.25278in" /> | 機能から、リソースやアセットをアサインするときに使用する。                                                                    |
-| 4   | <img src="467/media/image69.png" style="width:1.79236in;height:0.25278in" /> | 実現、ルール・データ標準レイヤーのエレメントの実現を表現。（例えば、「データ標準」の実現は「ベースレジストリ」）              |
-| 5   | <img src="467/media/image70.png" style="width:1.79236in;height:0.27222in" /> | 別途整理（Associationを利用）                                                                                                 |
-| 6   | <img src="467/media/image71.png" style="width:1.81181in;height:0.2625in" />  | データ等にアクセスするときに使用する。                                                                                        |
-| 7   | <img src="467/media/image72.png" style="width:1.81181in;height:0.27222in" /> | 別途整理（Associationを利用）                                                                                                 |
-| 8   | <img src="467/media/image73.png" style="width:1.79236in;height:0.25278in" /> | 別途整理（Associationを利用）                                                                                                 |
-| 9   | <img src="467/media/image74.png" style="width:1.80208in;height:0.27222in" /> | データの流れを示す。                                                                                                          |
-| 10  | <img src="467/media/image75.png" style="width:1.81181in;height:0.2625in" />  | 汎用的な要素を目的などに特化することを示す。（施設→学校　等）                                                                |
-| 11  | <img src="467/media/image76.png" style="width:1.81181in;height:0.2625in" />  | エレメント同士の関連を示す。                                                                                                  |
+| No. | リレーション | 定義 |
+|:---|:---|:---|
+| 1 | <img src="467/media/image66.png" style="width:1.82153in;height:0.25278in" /> | コンポジット（UMLと同義）、「全体」と「その全体の部分」の関係、全体エレメントの中に部分エレメントを入れて表現することを推奨。 |
+| 2 | <img src="467/media/image67.png" style="width:1.84167in;height:0.2625in" /> | データ等を収集するときに使用する。 |
+| 3 | <img src="467/media/image68.png" style="width:1.79236in;height:0.25278in" /> | 機能から、リソースやアセットをアサインするときに使用する。 |
+| 4 | <img src="467/media/image69.png" style="width:1.79236in;height:0.25278in" /> | 実現、ルール・データ標準レイヤーのエレメントの実現を表現。（例えば、「データ標準」の実現は「ベースレジストリ」） |
+| 5 | <img src="467/media/image70.png" style="width:1.79236in;height:0.27222in" /> | 別途整理（Associationを利用） |
+| 6 | <img src="467/media/image71.png" style="width:1.81181in;height:0.2625in" /> | データ等にアクセスするときに使用する。 |
+| 7 | <img src="467/media/image72.png" style="width:1.81181in;height:0.27222in" /> | 別途整理（Associationを利用） |
+| 8 | <img src="467/media/image73.png" style="width:1.79236in;height:0.25278in" /> | 別途整理（Associationを利用） |
+| 9 | <img src="467/media/image74.png" style="width:1.80208in;height:0.27222in" /> | データの流れを示す。 |
+| 10 | <img src="467/media/image75.png" style="width:1.81181in;height:0.2625in" /> | 汎用的な要素を目的などに特化することを示す。（施設→学校　等） |
+| 11 | <img src="467/media/image76.png" style="width:1.81181in;height:0.2625in" /> | エレメント同士の関連を示す。 |
 
 -----
 ## 3. アーキテクチャ全体俯瞰図の設計
@@ -269,11 +261,8 @@ ArchiMate(R)には多くのエレメントが定義されていますが、Stake
 アークテクチャ全体俯瞰図の設計は、戦略目標からトップダウンで、以下の流れで実施します。
 
 1.  戦略や目的、生み出す価値や、それを目指すうえでの原則を明確にします。
-
 2.  組織、データ等、わかっているものからエレメントを各レイヤーに記述していきます。リレーションは同時に記述していくのではなく、各エレメントを列挙した後に記述した方が効率的です。一方、関連性が明確なものはエレメントと同時に記述しても構いません。また、必要に応じてグルーピング機能を使ってエレメントをまとめていきます。
-
 3.  概要が記述できたら、各エレメント間の関係を整理しながらモデル上の配置を調整していきます。この際、必要に応じて業務改革の可能性も検討していきます。
-
 4.  概要のアーキテクチャができたところで各エレメントの細分化を図り、ルールなどの不足した部分を追記していきます。また、現状とギャップがある場合には、そのギャップなどを注記していきます。
 
 #### 3.2.1. 戦略レイヤー
@@ -299,15 +288,10 @@ ArchiMate(R)には多くのエレメントが定義されていますが、Stake
 ###### 3.2.1.0.2. 記述の流れ
 
 1.  戦略目標であるGoalを確定します。その際、サブGoalがある場合には、その内容も記述します。
-
 2.  Goalが生み出す価値であるValueを明確にします。
-
 3.  Stakeholderを明確にします。
-
 4.  原則であるPrincipleがある場合にはそれを明確にします。
-
 5.  制約条件があるときにはConstraintを明確にします。
-
 6.  その他必要項目を明確にします。
 
 ###### 3.2.1.0.3. 記述例
@@ -335,9 +319,7 @@ ArchiMate(R)には多くのエレメントが定義されていますが、Stake
 ###### 3.2.2.0.2. 記述の流れ
 
 1.  アーキテクチャに関係する組織をResourceとして明記します。
-
 2.  組織内に手順や活動指針がある場合には、Course of Actionとして明記します。
-
 3.  必要に応じて業務（サービス）のレイヤーに記述されるBusiness Actorと関連付けます。
 
 ###### 3.2.2.0.3. 記述例
@@ -371,9 +353,7 @@ ArchiMate(R)には多くのエレメントが定義されていますが、Stake
 ###### 3.2.3.0.2. 記述の流れ
 
 1.  ルールは包括的に多くのエレメントに関連することが多いことからリレーションを意識せずに備忘録的にエレメントを記述していきます。
-
 2.  業務やサービスを行ううえでクリティカルに関係がある場合には、関係エレメントとのリレーションを明記します。
-
 3.  制度的な課題がある場合には、課題をGapとして明記します。
 
 #### 3.2.4. 業務（サービス）レイヤー、利活用環境レイヤー、連携基盤（ツール）レイヤー
@@ -414,9 +394,7 @@ ArchiMate(R)には多くのエレメントが定義されていますが、Stake
 ###### 3.2.4.0.2. 記述の流れ
 
 1.  業務やサービスといった観点から、そこに関係する人であるBusiness Actorや、何を介してアクセスするかというBusiness Interfaceと業務サービスであるBusiness Serviceを明確にします。業務サービスの中には、機能や役割や業務プロセスを含むことがあります。
-
 2.  このサービスを実現するためのApplication Service（Webサービスを含む）を明確化します。
-
 3.  そのアプリケーションを実現するための機能であるApplication Componentを明確にします。
 
     ※上記の1で社会のサービスという観点で整理を行い、2、3でシステム（ソフトウェア）の観点で整理を行います。
@@ -460,9 +438,7 @@ ArchiMate(R)には多くのエレメントが定義されていますが、Stake
 ###### 3.2.5.0.2. 記述の流れ
 
 1.  業務で使っているデータを明確にします。
-
 2.  関係しそうなデータ標準を明確にし、必要に応じてデータと関連付けます。
-
 3.  ベースレジストリは、エレメントの文字を赤色（赤文字）で表現します。
 
 #### 3.2.6. インフラレイヤー
@@ -481,7 +457,6 @@ ArchiMate(R)には多くのエレメントが定義されていますが、Stake
 ###### 3.2.6.0.2. 記述の流れ
 
 1.  アセットやインフラを列挙します。
-
 2.  アセットやインフラに関するGapを明確にします。
 
 ※インフラは全般的に使用されることが多いため、無理にリレーションを張る必要はありません。
@@ -533,9 +508,7 @@ ArchiMate(R)には多くのエレメントが定義されていますが、Stake
 内閣官房情報通信技術（IT）総合戦略室では、2020年９月から12月まで、以下の相互に密接に関係した３つの戦略・方針策定の作業を行いました。
 
 * アーキテクチャをベースに検討した「データ戦略タスクフォース第一次とりまとめ[^10]（76ページ）」
-
 * IT基本法の見直しやデジタル庁設置の考え方等の方針である「デジタル社会の実現に向けた改革の基本方針[^11]（本文18ページ、別紙51ページ）」
-
 * デジタル・ガバメントの今後の方向性を示した「デジタル・ガバメント実行計画[^12]（全体335ページ）」
 
 これらの関係性を整理するために３つの文書を比較し、データ戦略のアーキテクチャを共通軸に他の２つの戦略を整理しました。
@@ -549,7 +522,6 @@ ArchiMate(R)には多くのエレメントが定義されていますが、Stake
 <figcaption> 図 7　各種戦略の関係性の整理 </figcaption> </figure>
 
 単なる文書の比較ではなくアーキテクチャ全体俯瞰図を使った比較により、戦略の全体像や役割分担が明確になりました。
-
 このような可視化の取組により、デジタル庁の創設を見据えたチーム間の協力関係が明確になったことは重要な成果です。
 
 ### 4.4. プラットフォーム間の共通化や連携の検討
@@ -585,14 +557,15 @@ ArchiMate(R)には多くのエレメントが定義されていますが、Stake
 このようにイメージ化を図ることで関係府省との議論が深まり、さらには下図のように詳細化を行うことも可能となりました。
 
 <figure>
-
-全体像
+<figcaption>全体像</figcaption>
 <img src="467/media/image123.png" style="width:5.90556in;height:2.31806in" alt="画像7" />
+</figure>
 
-教育部分の拡大
+<figure>
+<figcaption>教育部分の拡大</figcaption>
 <img src="467/media/image124.png" style="width:5.90556in;height:4.06389in" />
-
-<figcaption> 図 11　プラットフォーム検討の整理イメージ </figcaption> </figure>
+<figcaption> 図 11　プラットフォーム検討の整理イメージ </figcaption>
+</figure>
 
 現在は、下図のように分野毎に詳細アーキテクチャを比較して議論を進めていますが、そうすることで優先的に整備すべきサービスやデータモデルを明確にすることができます。
 
