@@ -7,8 +7,11 @@ https://www.digital.go.jp/policies/data_strategy_government_interoperability_fra
 
 ※GIFの読み方はジー・アイ・エフです。
 
-## GIFの公開リポジトリにおけるGithub Issueの扱いについて
+## GIFの公開リポジトリにおけるご意見、資材変更の扱いについて
 
-利用者はGithubのIssue機能を使って、GIFについて課題の提起や修正の提案を行うことができます。
-IssueはGIF改善のための貴重なご意見として参考にさせていただきますが、
-個別のIssueについては、回答しない場合があるのでご了承ください。
+現在、当該GitHubでのご意見やご質問(Issues)、資材変更(Pull Request)などの受付は行なっておりません。
+お問い合わせについては、専用のフォームやメールをご利用ください。
+
+# お問い合わせ
+* フォームでの問い合わせは[こちら](https://form-www.digital.go.jp/contact/)
+* メールでの問い合わせはこちら　gif-info@digital.go.jp（デジタル庁デジタル社会共通機能グループ GIF担当宛)
