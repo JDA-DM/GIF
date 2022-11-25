@@ -7,7 +7,7 @@
 * [441_コアデータパーツ_日付時刻](md/441_core_dataparts_datetime.md)
 * [442_コアデータパーツ_住所（アドレス）](md/442_core_dataparts_adress.md)
 * [443_コアデータパーツ_郵便番号](md/443_core_dataparts_postalcode.md)
-* [444_コアデータパーツ_地理情報](md/444_core_dataparts_geography.md)
+* [444_コアデータパーツ_地理座標](md/444_core_dataparts_geography.md)
 * [445_コアデータパーツ_電話番号](md/445_core_dataparts_phonenumber.md)
 
 ### Word版
@@ -15,5 +15,5 @@
 * [441_コアデータパーツ_日付時刻(docx)](docx/441_コアデータパーツ_日付時刻.docx)
 * [442_コアデータパーツ_住所（アドレス）(docx)](docx/442_コアデータパーツ_住所（アドレス）.docx)
 * [443_コアデータパーツ_郵便番号(docx)](docx/443_コアデータパーツ_郵便番号.docx)
-* [444_コアデータパーツ_地理情報(docx)](docx/444_コアデータパーツ_地理情報.docx)
+* [444_コアデータパーツ_地理座標(docx)](docx/444_コアデータパーツ_地理座標.docx)
 * [445_コアデータパーツ_電話番号(docx)](docx/445_コアデータパーツ_電話番号.docx)
