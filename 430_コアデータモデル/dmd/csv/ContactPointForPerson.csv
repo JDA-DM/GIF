@@ -2,7 +2,7 @@
 1,pd,連絡先名称,,0,1,contactPointName,連絡先名称,文字列,デジタルエージェンシー,
 2,pd,連絡先電話番号,必,1,n,contactPointPhoneNumber,電話番号、携帯電話番号,文字列（半角文字）,012-3456-7890,
 3,pd,連絡先内線番号,,0,1,contactPointExtension,内線番号,文字列（半角数字）,1234,
-4,pd,連絡先メールアドレス,,0,1,contactPointEmailAddress,連絡先メールアドレス,文字列,XXXX@ooo.lg.jp,
+4,pd,連絡先メールアドレス,,0,n,contactPointEmailAddress,連絡先メールアドレス,文字列,XXXX@ooo.lg.jp,
 5,pd,連絡先FormURL,,0,1,contactPointFormUrl,連絡先がWebFormの場合のURL,URI,http://www.ooo.lg.jp/abc.html,
 6,pd,連絡先備考（その他、SNSなど）,,0,1,contactPointRemarks,SNSなどの連絡手段がある場合に記入,文字列,"Twitter: xxx, Instagram: xxx",
 7,pd,郵便番号,必,1,1,contactPointPostalCode,郵便番号,文字列（半角文字）,1234567,

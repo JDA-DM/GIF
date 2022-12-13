@@ -33,3 +33,5 @@
 32,pd,居住住所,,0,1,residenceAddress,居住住所情報,pd:住所,住所型のデータモデルを格納,IMI
 33,pd,役割関与情報,,0,n,roleInformation,委任先、保護者、続柄など,pd:役割関与情報型,"{{""種別"": ""続柄"", ""種別関連情報"": ""配偶者""}, 山田次郎の個人型のデータモデルを格納}",
 34,pd,連絡先情報,必,1,1,contactPointInformation,連絡先住所の情報,pd:連絡先（pd:個人連絡先）,個人連絡先型のデータモデルを格納,schema.org
+35,pd,戸籍氏,,0,1,familyRegisterFamilyName,戸籍上の氏,文字列,山田,
+36,pd,戸籍名,,0,1,familyRegisterGivenName,戸籍上の名,文字列,花子,
