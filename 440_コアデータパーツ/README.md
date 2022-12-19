@@ -5,7 +5,7 @@
 
 
 * [441_コアデータパーツ_日付時刻](md/441_core_dataparts_datetime.md)
-* [442_コアデータパーツ_住所（アドレス）](md/442_core_dataparts_adress.md)
+* [442_コアデータパーツ_住所（アドレス）](md/442_core_dataparts_address.md)
 * [443_コアデータパーツ_郵便番号](md/443_core_dataparts_postalcode.md)
 * [444_コアデータパーツ_地理座標](md/444_core_dataparts_geography.md)
 * [445_コアデータパーツ_電話番号](md/445_core_dataparts_phonenumber.md)
