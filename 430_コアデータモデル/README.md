@@ -3,6 +3,7 @@
 GIFでは、データモデルを基礎編であるコアデータモデルと、応用編である実装データモデルに大別して整備しています。
 コアデータモデルでは、社会の様々な場面で登場する個人や法人、住所や連絡先などの基礎的なデータモデルを定義しています。
 
+<!--
 * [430_コアデータモデル全体概要](md/430_core_datamodel_overview.md)
 * [431_コアデータモデル解説書_個人](md/431_core_datamodel_person.md)
 * [432_コアデータモデル解説書_連絡先](md/432_core_datamodel_contact.md)
@@ -15,7 +16,7 @@ GIFでは、データモデルを基礎編であるコアデータモデルと�
 * [43A_コアデータモデル解説書_建物](md/43A_core_datamodel_building.md)
 * [43B_コアデータモデル解説書_設備](md/43B_core_datamodel_equipment.md)
 * [43C_コアデータモデル解説書_イベント](md/43C_core_datamodel_event.md)
-
+-->
 
 ### Word版
 
