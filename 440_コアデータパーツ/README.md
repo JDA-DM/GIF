@@ -3,12 +3,13 @@
 日付や電話番号、住所など、様々なデータモデルで登場するデータ項目に関しては、コアデータパーツとして共通形式を定めています。
 共通形式でデータを記述しておくことで、連携の際に変換処理を省くことができ、円滑なデータ連携が可能になります。
 
-
+<!--
 * [441_コアデータパーツ_日付時刻](md/441_core_dataparts_datetime.md)
 * [442_コアデータパーツ_住所（アドレス）](md/442_core_dataparts_address.md)
 * [443_コアデータパーツ_郵便番号](md/443_core_dataparts_postalcode.md)
 * [444_コアデータパーツ_地理座標](md/444_core_dataparts_geography.md)
 * [445_コアデータパーツ_電話番号](md/445_core_dataparts_phonenumber.md)
+-->
 
 ### Word版
 
