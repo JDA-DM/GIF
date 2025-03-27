@@ -1,0 +1,2981 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xsd:schema xmlns:foaf="http://xmlns.com/foaf/0.1/"
+   xmlns:dct="http://purl.org/dc/terms/"
+   xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+   targetNamespace="http://xxx/xxx/gif/codelist/xxx"
+   xmlns:pcd="http://xxx/xxx/gif/codelist/xxx">
+   <xsd:annotation>
+      <xsd:documentation xml:lang="ja">デジタル庁は、デジタル・ガバメント推進標準ガイドラインのもと、データの利活用、連携がスムースに行える社会を実現するための技術的体系として、「政府相互運用性フレームワーク（Government Interoperability Framework）」（以下、GIFといいます。）のコード一覧を提供します。このフレームワークを利用してデータを整備することで、拡張性が高く、連携が容易なデータを設計することが可能となります。</xsd:documentation>
+      <xsd:documentation xml:lang="ja">前提：コードと名称の構造は、コード＝名称の制御はスキーマでは実施せず、文字列の構造とする。pcdのURIは暫定とする。</xsd:documentation>
+      <xsd:documentation xml:lang="ja">前提：国コードは、ISO 3166-1 alpha-3に従い、名称は、JIS X 0304:2011を元にして、参考としてサンプルコード一覧として記す。また、不明項目（Code値：XXX）は新規に追加している。</xsd:documentation>
+      <xsd:documentation xml:lang="en">Government Interoperability Framework</xsd:documentation>
+      <xsd:appinfo>
+         <dct:title xml:lang="ja">政府相互運用性フレームワーク(GIF)</dct:title>
+         <dct:title xml:lang="en">Government Interoperability Framework(GIF)</dct:title>
+         <dct:license>https://creativecommons.org/licenses/by/4.0/legalcode.ja</dct:license>
+         <dct:issued>2025-03-25</dct:issued>
+         <dct:creator>
+            <foaf:name xml:lang="ja">デジタル庁</foaf:name>
+            <foaf:name xml:lang="en">Digital Agency</foaf:name>
+            <foaf:homepage>https://www.digital.go.jp/</foaf:homepage>
+         </dct:creator>
+      </xsd:appinfo>
+   </xsd:annotation>
+
+  <xsd:complexType name="SexCodeList_code_value">
+    <xsd:annotation>
+      <xsd:documentation xml:lang="ja">性別コード一覧のコード値と名称</xsd:documentation>
+      <xsd:documentation xml:lang="en"></xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+       <xsd:group ref="pcd:SexCodeList_uniqueElementGroup"/>
+    </xsd:sequence>
+    <xsd:attribute name="id" type="xsd:ID"/>
+    <xsd:attribute name="ref" type="xsd:IDREF"/>
+  </xsd:complexType>
+  <xsd:group name="SexCodeList_uniqueElementGroup">
+    <xsd:sequence>
+      <xsd:element ref="pcd:code" minOccurs="1" maxOccurs="1"/>
+      <xsd:element ref="pcd:value" minOccurs="1" maxOccurs="1"/>
+    </xsd:sequence>
+  </xsd:group>
+  <xsd:complexType name="StatusCodeList_code_value">
+    <xsd:annotation>
+      <xsd:documentation xml:lang="ja">有無コード一覧のコード値と名称</xsd:documentation>
+      <xsd:documentation xml:lang="en"></xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+       <xsd:group ref="pcd:StatusCodeList_uniqueElementGroup"/>
+    </xsd:sequence>
+    <xsd:attribute name="id" type="xsd:ID"/>
+    <xsd:attribute name="ref" type="xsd:IDREF"/>
+  </xsd:complexType>
+  <xsd:group name="StatusCodeList_uniqueElementGroup">
+    <xsd:sequence>
+      <xsd:element ref="pcd:code" minOccurs="1" maxOccurs="1"/>
+      <xsd:element ref="pcd:value" minOccurs="1" maxOccurs="1"/>
+    </xsd:sequence>
+  </xsd:group>
+  <xsd:complexType name="ApplicabilityCodeList_code_value">
+    <xsd:annotation>
+      <xsd:documentation xml:lang="ja">該当区分コード一覧のコード値と名称</xsd:documentation>
+      <xsd:documentation xml:lang="en"></xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+       <xsd:group ref="pcd:ApplicabilityCodeList_uniqueElementGroup"/>
+    </xsd:sequence>
+    <xsd:attribute name="id" type="xsd:ID"/>
+    <xsd:attribute name="ref" type="xsd:IDREF"/>
+  </xsd:complexType>
+  <xsd:group name="ApplicabilityCodeList_uniqueElementGroup">
+    <xsd:sequence>
+      <xsd:element ref="pcd:code" minOccurs="1" maxOccurs="1"/>
+      <xsd:element ref="pcd:value" minOccurs="1" maxOccurs="1"/>
+    </xsd:sequence>
+  </xsd:group>
+  <xsd:complexType name="MaritalStatusCodeList_code_value">
+    <xsd:annotation>
+      <xsd:documentation xml:lang="ja">婚姻コード一覧のコード値と名称</xsd:documentation>
+      <xsd:documentation xml:lang="en"></xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+       <xsd:group ref="pcd:MaritalStatusCodeList_uniqueElementGroup"/>
+    </xsd:sequence>
+    <xsd:attribute name="id" type="xsd:ID"/>
+    <xsd:attribute name="ref" type="xsd:IDREF"/>
+  </xsd:complexType>
+  <xsd:group name="MaritalStatusCodeList_uniqueElementGroup">
+    <xsd:sequence>
+      <xsd:element ref="pcd:code" minOccurs="1" maxOccurs="1"/>
+      <xsd:element ref="pcd:value" minOccurs="1" maxOccurs="1"/>
+    </xsd:sequence>
+  </xsd:group>
+  <xsd:complexType name="LegalEntityKindCodeList_code_value">
+    <xsd:annotation>
+      <xsd:documentation xml:lang="ja">法人種別コード一覧のコード値と名称</xsd:documentation>
+      <xsd:documentation xml:lang="en"></xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+       <xsd:group ref="pcd:LegalEntityKindCodeList_uniqueElementGroup"/>
+    </xsd:sequence>
+    <xsd:attribute name="id" type="xsd:ID"/>
+    <xsd:attribute name="ref" type="xsd:IDREF"/>
+  </xsd:complexType>
+  <xsd:group name="LegalEntityKindCodeList_uniqueElementGroup">
+    <xsd:sequence>
+      <xsd:element ref="pcd:code" minOccurs="1" maxOccurs="1"/>
+      <xsd:element ref="pcd:value" minOccurs="1" maxOccurs="1"/>
+    </xsd:sequence>
+  </xsd:group>
+  <xsd:complexType name="CountryRegionCodeList_code_value">
+    <xsd:annotation>
+      <xsd:documentation xml:lang="ja">国コード一覧のコード値と名称</xsd:documentation>
+      <xsd:documentation xml:lang="en"></xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+       <xsd:group ref="pcd:CountryRegionCodeList_uniqueElementGroup"/>
+    </xsd:sequence>
+    <xsd:attribute name="id" type="xsd:ID"/>
+    <xsd:attribute name="ref" type="xsd:IDREF"/>
+  </xsd:complexType>
+  <xsd:group name="CountryRegionCodeList_uniqueElementGroup">
+    <xsd:sequence>
+      <xsd:element ref="pcd:code" minOccurs="1" maxOccurs="1"/>
+      <xsd:element ref="pcd:value" minOccurs="1" maxOccurs="1"/>
+    </xsd:sequence>
+  </xsd:group>
+  <xsd:element name="code" type="pcd:code_simpleType">
+    <xsd:annotation>
+      <xsd:documentation xml:lang="ja">コード</xsd:documentation>
+      <xsd:documentation xml:lang="en"></xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:simpleType name="code_simpleType">
+    <xsd:restriction base="xsd:string"/>
+  </xsd:simpleType>
+  <xsd:element name="value" type="pcd:value_simpleType">
+    <xsd:annotation>
+      <xsd:documentation xml:lang="ja">名称</xsd:documentation>
+      <xsd:documentation xml:lang="en"></xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:simpleType name="value_simpleType">
+    <xsd:restriction base="xsd:string"/>
+  </xsd:simpleType>
+  <xsd:simpleType name="SexCodeList_code_simpleType">
+    <xsd:annotation>
+      <xsd:documentation xml:lang="ja">性別コード一覧のコード値リスト</xsd:documentation>
+      <xsd:documentation xml:lang="en"></xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="0">
+        <xsd:annotation>
+          <xsd:documentation>不明</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="1">
+        <xsd:annotation>
+          <xsd:documentation>男性</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="2">
+        <xsd:annotation>
+          <xsd:documentation>女性</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="9">
+        <xsd:annotation>
+          <xsd:documentation>適用不能</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="StatusCodeList_code_simpleType">
+    <xsd:annotation>
+      <xsd:documentation xml:lang="ja">有無コード一覧のコード値リスト</xsd:documentation>
+      <xsd:documentation xml:lang="en"></xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="0">
+        <xsd:annotation>
+          <xsd:documentation>無</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="1">
+        <xsd:annotation>
+          <xsd:documentation>有</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="2">
+        <xsd:annotation>
+          <xsd:documentation>非公開</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="9">
+        <xsd:annotation>
+          <xsd:documentation>不明</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="ApplicabilityCodeList_code_simpleType">
+    <xsd:annotation>
+      <xsd:documentation xml:lang="ja">該当区分コード一覧のコード値リスト</xsd:documentation>
+      <xsd:documentation xml:lang="en"></xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="0">
+        <xsd:annotation>
+          <xsd:documentation>非該当</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="1">
+        <xsd:annotation>
+          <xsd:documentation>該当</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="9">
+        <xsd:annotation>
+          <xsd:documentation>不明</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="MaritalStatusCodeList_code_simpleType">
+    <xsd:annotation>
+      <xsd:documentation xml:lang="ja">婚姻コード一覧のコード値リスト</xsd:documentation>
+      <xsd:documentation xml:lang="en"></xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="0">
+        <xsd:annotation>
+          <xsd:documentation>不明</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="1">
+        <xsd:annotation>
+          <xsd:documentation>未婚</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="2">
+        <xsd:annotation>
+          <xsd:documentation>既婚(有配偶)</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="3">
+        <xsd:annotation>
+          <xsd:documentation>既婚(死別)</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="4">
+        <xsd:annotation>
+          <xsd:documentation>既婚(離別)</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="9">
+        <xsd:annotation>
+          <xsd:documentation>その他</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="LegalEntityKindCodeList_code_simpleType">
+    <xsd:annotation>
+      <xsd:documentation xml:lang="ja">法人種別コード一覧のコード値リスト</xsd:documentation>
+      <xsd:documentation xml:lang="en"></xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="101">
+        <xsd:annotation>
+          <xsd:documentation>国の機関</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="201">
+        <xsd:annotation>
+          <xsd:documentation>地方公共団体</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="301">
+        <xsd:annotation>
+          <xsd:documentation>株式会社</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="302">
+        <xsd:annotation>
+          <xsd:documentation>有限会社</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="303">
+        <xsd:annotation>
+          <xsd:documentation>合名会社</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="304">
+        <xsd:annotation>
+          <xsd:documentation>合資会社</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="305">
+        <xsd:annotation>
+          <xsd:documentation>合同会社</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="399">
+        <xsd:annotation>
+          <xsd:documentation>その他の設立登記法人</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="401">
+        <xsd:annotation>
+          <xsd:documentation>外国会社等</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="499">
+        <xsd:annotation>
+          <xsd:documentation>その他</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="CountryRegionCodeList_code_simpleType">
+    <xsd:annotation>
+      <xsd:documentation xml:lang="ja">国コード一覧のコード値リスト</xsd:documentation>
+      <xsd:documentation xml:lang="en"></xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="AFG">
+        <xsd:annotation>
+          <xsd:documentation>アフガニスタン・イスラム共和国</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="ABW">
+        <xsd:annotation>
+          <xsd:documentation>アルバ</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="AGO">
+        <xsd:annotation>
+          <xsd:documentation>アンゴラ共和国</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="AIA">
+        <xsd:annotation>
+          <xsd:documentation>アンギラ</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="ALA">
+        <xsd:annotation>
+          <xsd:documentation>オーランド諸島</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="ALB">
+        <xsd:annotation>
+          <xsd:documentation>アルバニア共和国</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="AND">
+        <xsd:annotation>
+          <xsd:documentation>アンドラ公国</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="ANT">
+        <xsd:annotation>
+          <xsd:documentation>オランダ領アンティル</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="ARE">
+        <xsd:annotation>
+          <xsd:documentation>アラブ首長国連邦</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="ARG">
+        <xsd:annotation>
+          <xsd:documentation>アルゼンチン共和国</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="ARM">
+        <xsd:annotation>
+          <xsd:documentation>アルメニア共和国</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="ASM">
+        <xsd:annotation>
+          <xsd:documentation>米領サモア</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="ATA">
+        <xsd:annotation>
+          <xsd:documentation>南極</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="ATF">
+        <xsd:annotation>
+          <xsd:documentation>フランス領極南諸島</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="ATG">
+        <xsd:annotation>
+          <xsd:documentation>アンティグア・バーブーダ</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="AUS">
+        <xsd:annotation>
+          <xsd:documentation>オーストラリア連邦</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="AUT">
+        <xsd:annotation>
+          <xsd:documentation>オーストリア共和国</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="AZE">
+        <xsd:annotation>
+          <xsd:documentation>アゼルバイジャン共和国</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="BDI">
+        <xsd:annotation>
+          <xsd:documentation>ブルンジ共和国</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="BEL">
+        <xsd:annotation>
+          <xsd:documentation>ベルギー王国</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="BEN">
+        <xsd:annotation>
+          <xsd:documentation>ベナン共和国</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="BFA">
+        <xsd:annotation>
+          <xsd:documentation>ブルキナファソ</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="BGD">
+        <xsd:annotation>
+          <xsd:documentation>バングラデシュ人民共和国</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="BGR">
+        <xsd:annotation>
+          <xsd:documentation>ブルガリア共和国</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="BHR">
+        <xsd:annotation>
+          <xsd:documentation>バーレーン王国</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="BHS">
+        <xsd:annotation>
+          <xsd:documentation>バハマ国</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="BIH">
+        <xsd:annotation>
+          <xsd:documentation>ボスニア・ヘルツェゴビナ</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="BLM">
+        <xsd:annotation>
+          <xsd:documentation>サンバルテルミー</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="BLR">
+        <xsd:annotation>
+          <xsd:documentation>ベラルーシ共和国</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="BLZ">
+        <xsd:annotation>
+          <xsd:documentation>ベリーズ</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="BMU">
+        <xsd:annotation>
+          <xsd:documentation>バミューダ諸島</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="BOL">
+        <xsd:annotation>
+          <xsd:documentation>ボリビア多民族国</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="BRA">
+        <xsd:annotation>
+          <xsd:documentation>ブラジル連邦共和国</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="BRB">
+        <xsd:annotation>
+          <xsd:documentation>バルバドス</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="BRN">
+        <xsd:annotation>
+          <xsd:documentation>ブルネイ・ダルサラーム国</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="BTN">
+        <xsd:annotation>
+          <xsd:documentation>ブータン王国</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="BVT">
+        <xsd:annotation>
+          <xsd:documentation>ブーベ島</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="BWA">
+        <xsd:annotation>
+          <xsd:documentation>ボツワナ共和国</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="CAF">
+        <xsd:annotation>
+          <xsd:documentation>中央アフリカ共和国</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="CAN">
+        <xsd:annotation>
+          <xsd:documentation>カナダ</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="CCK">
+        <xsd:annotation>
+          <xsd:documentation>ココス諸島</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="CHE">
+        <xsd:annotation>
+          <xsd:documentation>スイス連邦</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="CHL">
+        <xsd:annotation>
+          <xsd:documentation>チリ共和国</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="CHN">
+        <xsd:annotation>
+          <xsd:documentation>中華人民共和国</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="CIV">
+        <xsd:annotation>
+          <xsd:documentation>コートジボワール共和国</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="CMR">
+        <xsd:annotation>
+          <xsd:documentation>カメルーン共和国</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="COD">
+        <xsd:annotation>
+          <xsd:documentation>コンゴ民主共和国</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="COG">
+        <xsd:annotation>
+          <xsd:documentation>コンゴ共和国</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="COK">
+        <xsd:annotation>
+          <xsd:documentation>クック諸島</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="COL">
+        <xsd:annotation>
+          <xsd:documentation>コロンビア共和国</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="COM">
+        <xsd:annotation>
+          <xsd:documentation>コモロ連合</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="CPV">
+        <xsd:annotation>
+          <xsd:documentation>カーボベルデ共和国</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="CRI">
+        <xsd:annotation>
+          <xsd:documentation>コスタリカ共和国</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="CUB">
+        <xsd:annotation>
+          <xsd:documentation>キューバ共和国</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="CXR">
+        <xsd:annotation>
+          <xsd:documentation>クリスマス島</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="CYM">
+        <xsd:annotation>
+          <xsd:documentation>ケイマン諸島</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="CYP">
+        <xsd:annotation>
+          <xsd:documentation>キプロス共和国</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="CZE">
+        <xsd:annotation>
+          <xsd:documentation>チェコ共和国</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="DEU">
+        <xsd:annotation>
+          <xsd:documentation>ドイツ連邦共和国</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="DJI">
+        <xsd:annotation>
+          <xsd:documentation>ジブチ共和国</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="DMA">
+        <xsd:annotation>
+          <xsd:documentation>ドミニカ国</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="DNK">
+        <xsd:annotation>
+          <xsd:documentation>デンマーク王国</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="DOM">
+        <xsd:annotation>
+          <xsd:documentation>ドミニカ共和国</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="DZA">
+        <xsd:annotation>
+          <xsd:documentation>アルジェリア民主人民共和国</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="ECU">
+        <xsd:annotation>
+          <xsd:documentation>エクアドル共和国</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="EGY">
+        <xsd:annotation>
+          <xsd:documentation>エジプト・アラブ共和国</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="ERI">
+        <xsd:annotation>
+          <xsd:documentation>エリトリア国</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="ESH">
+        <xsd:annotation>
+          <xsd:documentation>西サハラ</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="ESP">
+        <xsd:annotation>
+          <xsd:documentation>スペイン</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="EST">
+        <xsd:annotation>
+          <xsd:documentation>エストニア共和国</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="ETH">
+        <xsd:annotation>
+          <xsd:documentation>エチオピア連邦民主共和国</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="FIN">
+        <xsd:annotation>
+          <xsd:documentation>フィンランド共和国</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="FJI">
+        <xsd:annotation>
+          <xsd:documentation>フィジー諸島共和国</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="FLK">
+        <xsd:annotation>
+          <xsd:documentation>フォークランド（マルビナス）諸島</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="FRA">
+        <xsd:annotation>
+          <xsd:documentation>フランス共和国</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="FRO">
+        <xsd:annotation>
+          <xsd:documentation>フェロー諸島</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="FSM">
+        <xsd:annotation>
+          <xsd:documentation>ミクロネシア連邦</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="GAB">
+        <xsd:annotation>
+          <xsd:documentation>ガボン共和国</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="GBR">
+        <xsd:annotation>
+          <xsd:documentation>グレートブリテン・北アイルランド連合王国（英国）</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="GEO">
+        <xsd:annotation>
+          <xsd:documentation>グルジア</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="GGY">
+        <xsd:annotation>
+          <xsd:documentation>ガーンジー島</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="GHA">
+        <xsd:annotation>
+          <xsd:documentation>ガーナ共和国</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="GIB">
+        <xsd:annotation>
+          <xsd:documentation>ジブラルタル</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="GIN">
+        <xsd:annotation>
+          <xsd:documentation>ギニア共和国</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="GLP">
+        <xsd:annotation>
+          <xsd:documentation>グアドループ島</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="GMB">
+        <xsd:annotation>
+          <xsd:documentation>ガンビア共和国</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="GNB">
+        <xsd:annotation>
+          <xsd:documentation>ギニアビサウ共和国</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="GNQ">
+        <xsd:annotation>
+          <xsd:documentation>赤道ギニア共和国</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="GRC">
+        <xsd:annotation>
+          <xsd:documentation>ギリシャ共和国</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="GRD">
+        <xsd:annotation>
+          <xsd:documentation>グレナダ</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="GRL">
+        <xsd:annotation>
+          <xsd:documentation>グリーンランド</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="GTM">
+        <xsd:annotation>
+          <xsd:documentation>グアテマラ共和国</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="GUF">
+        <xsd:annotation>
+          <xsd:documentation>フランス領ギアナ</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="GUM">
+        <xsd:annotation>
+          <xsd:documentation>グアム</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="GUY">
+        <xsd:annotation>
+          <xsd:documentation>ガイアナ共和国</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="HKG">
+        <xsd:annotation>
+          <xsd:documentation>ホンコン（香港）特別行政区</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="HMD">
+        <xsd:annotation>
+          <xsd:documentation>ハード島・マクドナルド諸島</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="HND">
+        <xsd:annotation>
+          <xsd:documentation>ホンジュラス共和国</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="HRV">
+        <xsd:annotation>
+          <xsd:documentation>クロアチア共和国</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="HTI">
+        <xsd:annotation>
+          <xsd:documentation>ハイチ共和国</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="HUN">
+        <xsd:annotation>
+          <xsd:documentation>ハンガリー共和国</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="IDN">
+        <xsd:annotation>
+          <xsd:documentation>インドネシア共和国</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="IMN">
+        <xsd:annotation>
+          <xsd:documentation>マン島</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="IND">
+        <xsd:annotation>
+          <xsd:documentation>インド</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="IOT">
+        <xsd:annotation>
+          <xsd:documentation>英領インド洋地域</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="IRL">
+        <xsd:annotation>
+          <xsd:documentation>アイルランド</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="IRN">
+        <xsd:annotation>
+          <xsd:documentation>イラン・イスラム共和国</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="IRQ">
+        <xsd:annotation>
+          <xsd:documentation>イラク共和国</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="ISL">
+        <xsd:annotation>
+          <xsd:documentation>アイスランド共和国</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="ISR">
+        <xsd:annotation>
+          <xsd:documentation>イスラエル国</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="ITA">
+        <xsd:annotation>
+          <xsd:documentation>イタリア共和国</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="JAM">
+        <xsd:annotation>
+          <xsd:documentation>ジャマイカ</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="JEY">
+        <xsd:annotation>
+          <xsd:documentation>ジャージー島</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="JOR">
+        <xsd:annotation>
+          <xsd:documentation>ヨルダン・ハシミテ王国</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="JPN">
+        <xsd:annotation>
+          <xsd:documentation>日本国</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="KAZ">
+        <xsd:annotation>
+          <xsd:documentation>カザフスタン共和国</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="KEN">
+        <xsd:annotation>
+          <xsd:documentation>ケニア共和国</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="KGZ">
+        <xsd:annotation>
+          <xsd:documentation>キルギス共和国</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="KHM">
+        <xsd:annotation>
+          <xsd:documentation>カンボジア王国</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="KIR">
+        <xsd:annotation>
+          <xsd:documentation>キリバス共和国</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="KNA">
+        <xsd:annotation>
+          <xsd:documentation>セントキッツ・ネービス</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="KOR">
+        <xsd:annotation>
+          <xsd:documentation>大韓民国</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="KWT">
+        <xsd:annotation>
+          <xsd:documentation>クウェート国</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="LAO">
+        <xsd:annotation>
+          <xsd:documentation>ラオス人民民主共和国</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="LBN">
+        <xsd:annotation>
+          <xsd:documentation>レバノン共和国</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="LBR">
+        <xsd:annotation>
+          <xsd:documentation>リベリア共和国</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="LBY">
+        <xsd:annotation>
+          <xsd:documentation>大リビア・アラブ社会主義人民ジャマーヒリーヤ国</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="LCA">
+        <xsd:annotation>
+          <xsd:documentation>セントルシア</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="LIE">
+        <xsd:annotation>
+          <xsd:documentation>リヒテンシュタイン公国</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="LKA">
+        <xsd:annotation>
+          <xsd:documentation>スリランカ民主社会主義共和国</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="LSO">
+        <xsd:annotation>
+          <xsd:documentation>レソト王国</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="LTU">
+        <xsd:annotation>
+          <xsd:documentation>リトアニア共和国</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="LUX">
+        <xsd:annotation>
+          <xsd:documentation>ルクセンブルク大公国</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="LVA">
+        <xsd:annotation>
+          <xsd:documentation>ラトビア共和国</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="MAC">
+        <xsd:annotation>
+          <xsd:documentation>マカオ（澳門）特別行政区</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="MAF">
+        <xsd:annotation>
+          <xsd:documentation>サンマルタン</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="MAR">
+        <xsd:annotation>
+          <xsd:documentation>モロッコ王国</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="MCO">
+        <xsd:annotation>
+          <xsd:documentation>モナコ公国</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="MDA">
+        <xsd:annotation>
+          <xsd:documentation>モルドバ共和国</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="MDG">
+        <xsd:annotation>
+          <xsd:documentation>マダガスカル共和国</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="MDV">
+        <xsd:annotation>
+          <xsd:documentation>モルディブ共和国</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="MEX">
+        <xsd:annotation>
+          <xsd:documentation>メキシコ合衆国</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="MHL">
+        <xsd:annotation>
+          <xsd:documentation>マーシャル諸島共和国</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="MKD">
+        <xsd:annotation>
+          <xsd:documentation>マケドニア旧ユーゴスラビア共和国 </xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="MLI">
+        <xsd:annotation>
+          <xsd:documentation>マリ共和国</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="MLT">
+        <xsd:annotation>
+          <xsd:documentation>マルタ共和国</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="MMR">
+        <xsd:annotation>
+          <xsd:documentation>ミャンマー連邦</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="MNE">
+        <xsd:annotation>
+          <xsd:documentation>モンテネグロ</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="MNG">
+        <xsd:annotation>
+          <xsd:documentation>モンゴル国</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="MNP">
+        <xsd:annotation>
+          <xsd:documentation>北マリアナ諸島</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="MOZ">
+        <xsd:annotation>
+          <xsd:documentation>モザンビーク共和国</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="MRT">
+        <xsd:annotation>
+          <xsd:documentation>モーリタニア・イスラム共和国</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="MSR">
+        <xsd:annotation>
+          <xsd:documentation>モントセラト</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="MTQ">
+        <xsd:annotation>
+          <xsd:documentation>マルチニーク島</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="MUS">
+        <xsd:annotation>
+          <xsd:documentation>モーリシャス共和国</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="MWI">
+        <xsd:annotation>
+          <xsd:documentation>マラウイ共和国</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="MYS">
+        <xsd:annotation>
+          <xsd:documentation>マレーシア</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="MYT">
+        <xsd:annotation>
+          <xsd:documentation>マイヨット島</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="NAM">
+        <xsd:annotation>
+          <xsd:documentation>ナミビア共和国</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="NCL">
+        <xsd:annotation>
+          <xsd:documentation>ニューカレドニア</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="NER">
+        <xsd:annotation>
+          <xsd:documentation>ニジェール共和国</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="NFK">
+        <xsd:annotation>
+          <xsd:documentation>ノーフォーク島</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="NGA">
+        <xsd:annotation>
+          <xsd:documentation>ナイジェリア連邦共和国</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="NIC">
+        <xsd:annotation>
+          <xsd:documentation>ニカラグア共和国</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="NIU">
+        <xsd:annotation>
+          <xsd:documentation>ニウエ</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="NLD">
+        <xsd:annotation>
+          <xsd:documentation>オランダ王国</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="NOR">
+        <xsd:annotation>
+          <xsd:documentation>ノルウェー王国</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="NPL">
+        <xsd:annotation>
+          <xsd:documentation>ネパール連邦民主共和国</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="NRU">
+        <xsd:annotation>
+          <xsd:documentation>ナウル共和国</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="NZL">
+        <xsd:annotation>
+          <xsd:documentation>ニュージーランド</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="OMN">
+        <xsd:annotation>
+          <xsd:documentation>オマーン国</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="PAK">
+        <xsd:annotation>
+          <xsd:documentation>パキスタン・イスラム共和国</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="PAN">
+        <xsd:annotation>
+          <xsd:documentation>パナマ共和国</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="PCN">
+        <xsd:annotation>
+          <xsd:documentation>ピトケアン諸島</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="PER">
+        <xsd:annotation>
+          <xsd:documentation>ペルー共和国</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="PHL">
+        <xsd:annotation>
+          <xsd:documentation>フィリピン共和国</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="PLW">
+        <xsd:annotation>
+          <xsd:documentation>パラオ共和国</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="PNG">
+        <xsd:annotation>
+          <xsd:documentation>パプアニューギニア独立国</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="POL">
+        <xsd:annotation>
+          <xsd:documentation>ポーランド共和国</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="PRI">
+        <xsd:annotation>
+          <xsd:documentation>プエルトリコ</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="PRK">
+        <xsd:annotation>
+          <xsd:documentation>北朝鮮＝朝鮮民主主義人民共和国</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="PRT">
+        <xsd:annotation>
+          <xsd:documentation>ポルトガル共和国</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="PRY">
+        <xsd:annotation>
+          <xsd:documentation>パラグアイ共和国</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="PSE">
+        <xsd:annotation>
+          <xsd:documentation>西岸・ガザ （パレスチナ自治区）</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="PYF">
+        <xsd:annotation>
+          <xsd:documentation>フランス領ポリネシア</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="QAT">
+        <xsd:annotation>
+          <xsd:documentation>カタール国</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="REU">
+        <xsd:annotation>
+          <xsd:documentation>レユニオン</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="ROU">
+        <xsd:annotation>
+          <xsd:documentation>ルーマニア</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="RUS">
+        <xsd:annotation>
+          <xsd:documentation>ロシア連邦</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="RWA">
+        <xsd:annotation>
+          <xsd:documentation>ルワンダ共和国</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="SAU">
+        <xsd:annotation>
+          <xsd:documentation>サウジアラビア王国</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="SDN">
+        <xsd:annotation>
+          <xsd:documentation>スーダン共和国</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="SEN">
+        <xsd:annotation>
+          <xsd:documentation>セネガル共和国</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="SGP">
+        <xsd:annotation>
+          <xsd:documentation>シンガポール共和国</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="SGS">
+        <xsd:annotation>
+          <xsd:documentation>南ジョージア島・南サンドイッチ諸島</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="SHN">
+        <xsd:annotation>
+          <xsd:documentation>セントヘレナ・アセンション・トリスタンダクーニャ</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="SJM">
+        <xsd:annotation>
+          <xsd:documentation>スバールバル諸島・ヤンマイエン島</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="SLB">
+        <xsd:annotation>
+          <xsd:documentation>ソロモン諸島</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="SLE">
+        <xsd:annotation>
+          <xsd:documentation>シエラレオネ共和国</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="SLV">
+        <xsd:annotation>
+          <xsd:documentation>エルサルバドル共和国</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="SMR">
+        <xsd:annotation>
+          <xsd:documentation>サンマリノ共和国</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="SOM">
+        <xsd:annotation>
+          <xsd:documentation>ソマリア民主共和国</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="SPM">
+        <xsd:annotation>
+          <xsd:documentation>サンピエール島・ミクロン島</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="SRB">
+        <xsd:annotation>
+          <xsd:documentation>セルビア共和国</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="STP">
+        <xsd:annotation>
+          <xsd:documentation>サントメ・プリンシペ民主共和国</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="SUR">
+        <xsd:annotation>
+          <xsd:documentation>スリナム共和国</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="SVK">
+        <xsd:annotation>
+          <xsd:documentation>スロバキア共和国</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="SVN">
+        <xsd:annotation>
+          <xsd:documentation>スロベニア共和国</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="SWE">
+        <xsd:annotation>
+          <xsd:documentation>スウェーデン王国</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="SWZ">
+        <xsd:annotation>
+          <xsd:documentation>スワジランド王国</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="SYC">
+        <xsd:annotation>
+          <xsd:documentation>セーシェル共和国</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="SYR">
+        <xsd:annotation>
+          <xsd:documentation>シリア・アラブ共和国</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="TCA">
+        <xsd:annotation>
+          <xsd:documentation>タークス・カイコス諸島</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="TCD">
+        <xsd:annotation>
+          <xsd:documentation>チャド共和国</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="TGO">
+        <xsd:annotation>
+          <xsd:documentation>トーゴ共和国</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="THA">
+        <xsd:annotation>
+          <xsd:documentation>タイ王国</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="TJK">
+        <xsd:annotation>
+          <xsd:documentation>タジキスタン共和国</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="TKL">
+        <xsd:annotation>
+          <xsd:documentation>トケラウ諸島</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="TKM">
+        <xsd:annotation>
+          <xsd:documentation>トルクメニスタン</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="TLS">
+        <xsd:annotation>
+          <xsd:documentation>東ティモール民主共和国</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="TON">
+        <xsd:annotation>
+          <xsd:documentation>トンガ王国</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="TTO">
+        <xsd:annotation>
+          <xsd:documentation>トリニダード・トバゴ共和国</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="TUN">
+        <xsd:annotation>
+          <xsd:documentation>チュニジア共和国</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="TUR">
+        <xsd:annotation>
+          <xsd:documentation>トルコ共和国</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="TUV">
+        <xsd:annotation>
+          <xsd:documentation>ツバル</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="TWN">
+        <xsd:annotation>
+          <xsd:documentation>台湾（タイワン）</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="TZA">
+        <xsd:annotation>
+          <xsd:documentation>タンザニア連合共和国</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="UGA">
+        <xsd:annotation>
+          <xsd:documentation>ウガンダ共和国</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="UKR">
+        <xsd:annotation>
+          <xsd:documentation>ウクライナ</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="UMI">
+        <xsd:annotation>
+          <xsd:documentation>米領小離島</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="URY">
+        <xsd:annotation>
+          <xsd:documentation>ウルグアイ東方共和国</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="USA">
+        <xsd:annotation>
+          <xsd:documentation>アメリカ合衆国</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="UZB">
+        <xsd:annotation>
+          <xsd:documentation>ウズベキスタン共和国</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="VAT">
+        <xsd:annotation>
+          <xsd:documentation>バチカン市国</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="VCT">
+        <xsd:annotation>
+          <xsd:documentation>セントビンセント・グレナディーン諸島</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="VEN">
+        <xsd:annotation>
+          <xsd:documentation>ベネズエラ・ボリバル共和国</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="VGB">
+        <xsd:annotation>
+          <xsd:documentation>英領バージン諸島</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="VIR">
+        <xsd:annotation>
+          <xsd:documentation>米領バージン諸島</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="VNM">
+        <xsd:annotation>
+          <xsd:documentation>ベトナム社会主義共和国</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="VUT">
+        <xsd:annotation>
+          <xsd:documentation>バヌアツ共和国</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="WLF">
+        <xsd:annotation>
+          <xsd:documentation>ワリス・フテュナ諸島</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="WSM">
+        <xsd:annotation>
+          <xsd:documentation>サモア独立国</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="YEM">
+        <xsd:annotation>
+          <xsd:documentation>イエメン共和国</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="ZAF">
+        <xsd:annotation>
+          <xsd:documentation>南アフリカ共和国</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="ZMB">
+        <xsd:annotation>
+          <xsd:documentation>ザンビア共和国</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="ZWE">
+        <xsd:annotation>
+          <xsd:documentation>ジンバブエ共和国</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="XXX">
+        <xsd:annotation>
+          <xsd:documentation>不明</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="SexCodeList_value_simpleType">
+    <xsd:annotation>
+      <xsd:documentation xml:lang="ja">性別コード一覧の名称リスト</xsd:documentation>
+      <xsd:documentation xml:lang="en"></xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="不明">
+        <xsd:annotation>
+          <xsd:documentation>0</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="男性">
+        <xsd:annotation>
+          <xsd:documentation>1</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="女性">
+        <xsd:annotation>
+          <xsd:documentation>2</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="適用不能">
+        <xsd:annotation>
+          <xsd:documentation>9</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="StatusCodeList_value_simpleType">
+    <xsd:annotation>
+      <xsd:documentation xml:lang="ja">有無コード一覧の名称リスト</xsd:documentation>
+      <xsd:documentation xml:lang="en"></xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="無">
+        <xsd:annotation>
+          <xsd:documentation>0</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="有">
+        <xsd:annotation>
+          <xsd:documentation>1</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="非公開">
+        <xsd:annotation>
+          <xsd:documentation>2</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="不明">
+        <xsd:annotation>
+          <xsd:documentation>9</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="ApplicabilityCodeList_value_simpleType">
+    <xsd:annotation>
+      <xsd:documentation xml:lang="ja">該当区分コード一覧の名称リスト</xsd:documentation>
+      <xsd:documentation xml:lang="en"></xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="非該当">
+        <xsd:annotation>
+          <xsd:documentation>0</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="該当">
+        <xsd:annotation>
+          <xsd:documentation>1</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="不明">
+        <xsd:annotation>
+          <xsd:documentation>9</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="MaritalStatusCodeList_value_simpleType">
+    <xsd:annotation>
+      <xsd:documentation xml:lang="ja">婚姻コード一覧の名称リスト</xsd:documentation>
+      <xsd:documentation xml:lang="en"></xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="不明">
+        <xsd:annotation>
+          <xsd:documentation>0</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="未婚">
+        <xsd:annotation>
+          <xsd:documentation>1</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="既婚(有配偶)">
+        <xsd:annotation>
+          <xsd:documentation>2</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="既婚(死別)">
+        <xsd:annotation>
+          <xsd:documentation>3</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="既婚(離別)">
+        <xsd:annotation>
+          <xsd:documentation>4</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="その他">
+        <xsd:annotation>
+          <xsd:documentation>9</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="LegalEntityKindCodeList_value_simpleType">
+    <xsd:annotation>
+      <xsd:documentation xml:lang="ja">法人種別コード一覧の名称リスト</xsd:documentation>
+      <xsd:documentation xml:lang="en"></xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="国の機関">
+        <xsd:annotation>
+          <xsd:documentation>101</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="地方公共団体">
+        <xsd:annotation>
+          <xsd:documentation>201</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="株式会社">
+        <xsd:annotation>
+          <xsd:documentation>301</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="有限会社">
+        <xsd:annotation>
+          <xsd:documentation>302</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="合名会社">
+        <xsd:annotation>
+          <xsd:documentation>303</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="合資会社">
+        <xsd:annotation>
+          <xsd:documentation>304</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="合同会社">
+        <xsd:annotation>
+          <xsd:documentation>305</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="その他の設立登記法人">
+        <xsd:annotation>
+          <xsd:documentation>399</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="外国会社等">
+        <xsd:annotation>
+          <xsd:documentation>401</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="その他">
+        <xsd:annotation>
+          <xsd:documentation>499</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="CountryRegionCodeList_value_simpleType">
+    <xsd:annotation>
+      <xsd:documentation xml:lang="ja">国コード一覧の名称リスト</xsd:documentation>
+      <xsd:documentation xml:lang="en"></xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="アフガニスタン・イスラム共和国">
+        <xsd:annotation>
+          <xsd:documentation>AFG</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="アルバ">
+        <xsd:annotation>
+          <xsd:documentation>ABW</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="アンゴラ共和国">
+        <xsd:annotation>
+          <xsd:documentation>AGO</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="アンギラ">
+        <xsd:annotation>
+          <xsd:documentation>AIA</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="オーランド諸島">
+        <xsd:annotation>
+          <xsd:documentation>ALA</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="アルバニア共和国">
+        <xsd:annotation>
+          <xsd:documentation>ALB</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="アンドラ公国">
+        <xsd:annotation>
+          <xsd:documentation>AND</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="オランダ領アンティル">
+        <xsd:annotation>
+          <xsd:documentation>ANT</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="アラブ首長国連邦">
+        <xsd:annotation>
+          <xsd:documentation>ARE</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="アルゼンチン共和国">
+        <xsd:annotation>
+          <xsd:documentation>ARG</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="アルメニア共和国">
+        <xsd:annotation>
+          <xsd:documentation>ARM</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="米領サモア">
+        <xsd:annotation>
+          <xsd:documentation>ASM</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="南極">
+        <xsd:annotation>
+          <xsd:documentation>ATA</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="フランス領極南諸島">
+        <xsd:annotation>
+          <xsd:documentation>ATF</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="アンティグア・バーブーダ">
+        <xsd:annotation>
+          <xsd:documentation>ATG</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="オーストラリア連邦">
+        <xsd:annotation>
+          <xsd:documentation>AUS</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="オーストリア共和国">
+        <xsd:annotation>
+          <xsd:documentation>AUT</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="アゼルバイジャン共和国">
+        <xsd:annotation>
+          <xsd:documentation>AZE</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="ブルンジ共和国">
+        <xsd:annotation>
+          <xsd:documentation>BDI</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="ベルギー王国">
+        <xsd:annotation>
+          <xsd:documentation>BEL</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="ベナン共和国">
+        <xsd:annotation>
+          <xsd:documentation>BEN</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="ブルキナファソ">
+        <xsd:annotation>
+          <xsd:documentation>BFA</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="バングラデシュ人民共和国">
+        <xsd:annotation>
+          <xsd:documentation>BGD</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="ブルガリア共和国">
+        <xsd:annotation>
+          <xsd:documentation>BGR</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="バーレーン王国">
+        <xsd:annotation>
+          <xsd:documentation>BHR</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="バハマ国">
+        <xsd:annotation>
+          <xsd:documentation>BHS</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="ボスニア・ヘルツェゴビナ">
+        <xsd:annotation>
+          <xsd:documentation>BIH</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="サンバルテルミー">
+        <xsd:annotation>
+          <xsd:documentation>BLM</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="ベラルーシ共和国">
+        <xsd:annotation>
+          <xsd:documentation>BLR</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="ベリーズ">
+        <xsd:annotation>
+          <xsd:documentation>BLZ</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="バミューダ諸島">
+        <xsd:annotation>
+          <xsd:documentation>BMU</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="ボリビア多民族国">
+        <xsd:annotation>
+          <xsd:documentation>BOL</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="ブラジル連邦共和国">
+        <xsd:annotation>
+          <xsd:documentation>BRA</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="バルバドス">
+        <xsd:annotation>
+          <xsd:documentation>BRB</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="ブルネイ・ダルサラーム国">
+        <xsd:annotation>
+          <xsd:documentation>BRN</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="ブータン王国">
+        <xsd:annotation>
+          <xsd:documentation>BTN</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="ブーベ島">
+        <xsd:annotation>
+          <xsd:documentation>BVT</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="ボツワナ共和国">
+        <xsd:annotation>
+          <xsd:documentation>BWA</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="中央アフリカ共和国">
+        <xsd:annotation>
+          <xsd:documentation>CAF</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="カナダ">
+        <xsd:annotation>
+          <xsd:documentation>CAN</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="ココス諸島">
+        <xsd:annotation>
+          <xsd:documentation>CCK</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="スイス連邦">
+        <xsd:annotation>
+          <xsd:documentation>CHE</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="チリ共和国">
+        <xsd:annotation>
+          <xsd:documentation>CHL</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="中華人民共和国">
+        <xsd:annotation>
+          <xsd:documentation>CHN</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="コートジボワール共和国">
+        <xsd:annotation>
+          <xsd:documentation>CIV</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="カメルーン共和国">
+        <xsd:annotation>
+          <xsd:documentation>CMR</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="コンゴ民主共和国">
+        <xsd:annotation>
+          <xsd:documentation>COD</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="コンゴ共和国">
+        <xsd:annotation>
+          <xsd:documentation>COG</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="クック諸島">
+        <xsd:annotation>
+          <xsd:documentation>COK</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="コロンビア共和国">
+        <xsd:annotation>
+          <xsd:documentation>COL</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="コモロ連合">
+        <xsd:annotation>
+          <xsd:documentation>COM</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="カーボベルデ共和国">
+        <xsd:annotation>
+          <xsd:documentation>CPV</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="コスタリカ共和国">
+        <xsd:annotation>
+          <xsd:documentation>CRI</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="キューバ共和国">
+        <xsd:annotation>
+          <xsd:documentation>CUB</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="クリスマス島">
+        <xsd:annotation>
+          <xsd:documentation>CXR</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="ケイマン諸島">
+        <xsd:annotation>
+          <xsd:documentation>CYM</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="キプロス共和国">
+        <xsd:annotation>
+          <xsd:documentation>CYP</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="チェコ共和国">
+        <xsd:annotation>
+          <xsd:documentation>CZE</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="ドイツ連邦共和国">
+        <xsd:annotation>
+          <xsd:documentation>DEU</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="ジブチ共和国">
+        <xsd:annotation>
+          <xsd:documentation>DJI</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="ドミニカ国">
+        <xsd:annotation>
+          <xsd:documentation>DMA</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="デンマーク王国">
+        <xsd:annotation>
+          <xsd:documentation>DNK</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="ドミニカ共和国">
+        <xsd:annotation>
+          <xsd:documentation>DOM</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="アルジェリア民主人民共和国">
+        <xsd:annotation>
+          <xsd:documentation>DZA</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="エクアドル共和国">
+        <xsd:annotation>
+          <xsd:documentation>ECU</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="エジプト・アラブ共和国">
+        <xsd:annotation>
+          <xsd:documentation>EGY</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="エリトリア国">
+        <xsd:annotation>
+          <xsd:documentation>ERI</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="西サハラ">
+        <xsd:annotation>
+          <xsd:documentation>ESH</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="スペイン">
+        <xsd:annotation>
+          <xsd:documentation>ESP</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="エストニア共和国">
+        <xsd:annotation>
+          <xsd:documentation>EST</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="エチオピア連邦民主共和国">
+        <xsd:annotation>
+          <xsd:documentation>ETH</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="フィンランド共和国">
+        <xsd:annotation>
+          <xsd:documentation>FIN</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="フィジー諸島共和国">
+        <xsd:annotation>
+          <xsd:documentation>FJI</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="フォークランド（マルビナス）諸島">
+        <xsd:annotation>
+          <xsd:documentation>FLK</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="フランス共和国">
+        <xsd:annotation>
+          <xsd:documentation>FRA</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="フェロー諸島">
+        <xsd:annotation>
+          <xsd:documentation>FRO</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="ミクロネシア連邦">
+        <xsd:annotation>
+          <xsd:documentation>FSM</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="ガボン共和国">
+        <xsd:annotation>
+          <xsd:documentation>GAB</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="グレートブリテン・北アイルランド連合王国（英国）">
+        <xsd:annotation>
+          <xsd:documentation>GBR</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="グルジア">
+        <xsd:annotation>
+          <xsd:documentation>GEO</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="ガーンジー島">
+        <xsd:annotation>
+          <xsd:documentation>GGY</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="ガーナ共和国">
+        <xsd:annotation>
+          <xsd:documentation>GHA</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="ジブラルタル">
+        <xsd:annotation>
+          <xsd:documentation>GIB</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="ギニア共和国">
+        <xsd:annotation>
+          <xsd:documentation>GIN</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="グアドループ島">
+        <xsd:annotation>
+          <xsd:documentation>GLP</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="ガンビア共和国">
+        <xsd:annotation>
+          <xsd:documentation>GMB</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="ギニアビサウ共和国">
+        <xsd:annotation>
+          <xsd:documentation>GNB</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="赤道ギニア共和国">
+        <xsd:annotation>
+          <xsd:documentation>GNQ</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="ギリシャ共和国">
+        <xsd:annotation>
+          <xsd:documentation>GRC</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="グレナダ">
+        <xsd:annotation>
+          <xsd:documentation>GRD</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="グリーンランド">
+        <xsd:annotation>
+          <xsd:documentation>GRL</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="グアテマラ共和国">
+        <xsd:annotation>
+          <xsd:documentation>GTM</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="フランス領ギアナ">
+        <xsd:annotation>
+          <xsd:documentation>GUF</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="グアム">
+        <xsd:annotation>
+          <xsd:documentation>GUM</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="ガイアナ共和国">
+        <xsd:annotation>
+          <xsd:documentation>GUY</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="ホンコン（香港）特別行政区">
+        <xsd:annotation>
+          <xsd:documentation>HKG</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="ハード島・マクドナルド諸島">
+        <xsd:annotation>
+          <xsd:documentation>HMD</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="ホンジュラス共和国">
+        <xsd:annotation>
+          <xsd:documentation>HND</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="クロアチア共和国">
+        <xsd:annotation>
+          <xsd:documentation>HRV</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="ハイチ共和国">
+        <xsd:annotation>
+          <xsd:documentation>HTI</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="ハンガリー共和国">
+        <xsd:annotation>
+          <xsd:documentation>HUN</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="インドネシア共和国">
+        <xsd:annotation>
+          <xsd:documentation>IDN</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="マン島">
+        <xsd:annotation>
+          <xsd:documentation>IMN</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="インド">
+        <xsd:annotation>
+          <xsd:documentation>IND</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="英領インド洋地域">
+        <xsd:annotation>
+          <xsd:documentation>IOT</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="アイルランド">
+        <xsd:annotation>
+          <xsd:documentation>IRL</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="イラン・イスラム共和国">
+        <xsd:annotation>
+          <xsd:documentation>IRN</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="イラク共和国">
+        <xsd:annotation>
+          <xsd:documentation>IRQ</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="アイスランド共和国">
+        <xsd:annotation>
+          <xsd:documentation>ISL</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="イスラエル国">
+        <xsd:annotation>
+          <xsd:documentation>ISR</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="イタリア共和国">
+        <xsd:annotation>
+          <xsd:documentation>ITA</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="ジャマイカ">
+        <xsd:annotation>
+          <xsd:documentation>JAM</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="ジャージー島">
+        <xsd:annotation>
+          <xsd:documentation>JEY</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="ヨルダン・ハシミテ王国">
+        <xsd:annotation>
+          <xsd:documentation>JOR</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="日本国">
+        <xsd:annotation>
+          <xsd:documentation>JPN</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="カザフスタン共和国">
+        <xsd:annotation>
+          <xsd:documentation>KAZ</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="ケニア共和国">
+        <xsd:annotation>
+          <xsd:documentation>KEN</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="キルギス共和国">
+        <xsd:annotation>
+          <xsd:documentation>KGZ</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="カンボジア王国">
+        <xsd:annotation>
+          <xsd:documentation>KHM</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="キリバス共和国">
+        <xsd:annotation>
+          <xsd:documentation>KIR</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="セントキッツ・ネービス">
+        <xsd:annotation>
+          <xsd:documentation>KNA</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="大韓民国">
+        <xsd:annotation>
+          <xsd:documentation>KOR</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="クウェート国">
+        <xsd:annotation>
+          <xsd:documentation>KWT</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="ラオス人民民主共和国">
+        <xsd:annotation>
+          <xsd:documentation>LAO</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="レバノン共和国">
+        <xsd:annotation>
+          <xsd:documentation>LBN</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="リベリア共和国">
+        <xsd:annotation>
+          <xsd:documentation>LBR</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="大リビア・アラブ社会主義人民ジャマーヒリーヤ国">
+        <xsd:annotation>
+          <xsd:documentation>LBY</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="セントルシア">
+        <xsd:annotation>
+          <xsd:documentation>LCA</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="リヒテンシュタイン公国">
+        <xsd:annotation>
+          <xsd:documentation>LIE</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="スリランカ民主社会主義共和国">
+        <xsd:annotation>
+          <xsd:documentation>LKA</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="レソト王国">
+        <xsd:annotation>
+          <xsd:documentation>LSO</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="リトアニア共和国">
+        <xsd:annotation>
+          <xsd:documentation>LTU</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="ルクセンブルク大公国">
+        <xsd:annotation>
+          <xsd:documentation>LUX</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="ラトビア共和国">
+        <xsd:annotation>
+          <xsd:documentation>LVA</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="マカオ（澳門）特別行政区">
+        <xsd:annotation>
+          <xsd:documentation>MAC</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="サンマルタン">
+        <xsd:annotation>
+          <xsd:documentation>MAF</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="モロッコ王国">
+        <xsd:annotation>
+          <xsd:documentation>MAR</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="モナコ公国">
+        <xsd:annotation>
+          <xsd:documentation>MCO</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="モルドバ共和国">
+        <xsd:annotation>
+          <xsd:documentation>MDA</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="マダガスカル共和国">
+        <xsd:annotation>
+          <xsd:documentation>MDG</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="モルディブ共和国">
+        <xsd:annotation>
+          <xsd:documentation>MDV</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="メキシコ合衆国">
+        <xsd:annotation>
+          <xsd:documentation>MEX</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="マーシャル諸島共和国">
+        <xsd:annotation>
+          <xsd:documentation>MHL</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="マケドニア旧ユーゴスラビア共和国 ">
+        <xsd:annotation>
+          <xsd:documentation>MKD</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="マリ共和国">
+        <xsd:annotation>
+          <xsd:documentation>MLI</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="マルタ共和国">
+        <xsd:annotation>
+          <xsd:documentation>MLT</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="ミャンマー連邦">
+        <xsd:annotation>
+          <xsd:documentation>MMR</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="モンテネグロ">
+        <xsd:annotation>
+          <xsd:documentation>MNE</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="モンゴル国">
+        <xsd:annotation>
+          <xsd:documentation>MNG</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="北マリアナ諸島">
+        <xsd:annotation>
+          <xsd:documentation>MNP</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="モザンビーク共和国">
+        <xsd:annotation>
+          <xsd:documentation>MOZ</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="モーリタニア・イスラム共和国">
+        <xsd:annotation>
+          <xsd:documentation>MRT</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="モントセラト">
+        <xsd:annotation>
+          <xsd:documentation>MSR</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="マルチニーク島">
+        <xsd:annotation>
+          <xsd:documentation>MTQ</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="モーリシャス共和国">
+        <xsd:annotation>
+          <xsd:documentation>MUS</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="マラウイ共和国">
+        <xsd:annotation>
+          <xsd:documentation>MWI</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="マレーシア">
+        <xsd:annotation>
+          <xsd:documentation>MYS</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="マイヨット島">
+        <xsd:annotation>
+          <xsd:documentation>MYT</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="ナミビア共和国">
+        <xsd:annotation>
+          <xsd:documentation>NAM</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="ニューカレドニア">
+        <xsd:annotation>
+          <xsd:documentation>NCL</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="ニジェール共和国">
+        <xsd:annotation>
+          <xsd:documentation>NER</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="ノーフォーク島">
+        <xsd:annotation>
+          <xsd:documentation>NFK</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="ナイジェリア連邦共和国">
+        <xsd:annotation>
+          <xsd:documentation>NGA</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="ニカラグア共和国">
+        <xsd:annotation>
+          <xsd:documentation>NIC</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="ニウエ">
+        <xsd:annotation>
+          <xsd:documentation>NIU</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="オランダ王国">
+        <xsd:annotation>
+          <xsd:documentation>NLD</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="ノルウェー王国">
+        <xsd:annotation>
+          <xsd:documentation>NOR</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="ネパール連邦民主共和国">
+        <xsd:annotation>
+          <xsd:documentation>NPL</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="ナウル共和国">
+        <xsd:annotation>
+          <xsd:documentation>NRU</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="ニュージーランド">
+        <xsd:annotation>
+          <xsd:documentation>NZL</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="オマーン国">
+        <xsd:annotation>
+          <xsd:documentation>OMN</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="パキスタン・イスラム共和国">
+        <xsd:annotation>
+          <xsd:documentation>PAK</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="パナマ共和国">
+        <xsd:annotation>
+          <xsd:documentation>PAN</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="ピトケアン諸島">
+        <xsd:annotation>
+          <xsd:documentation>PCN</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="ペルー共和国">
+        <xsd:annotation>
+          <xsd:documentation>PER</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="フィリピン共和国">
+        <xsd:annotation>
+          <xsd:documentation>PHL</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="パラオ共和国">
+        <xsd:annotation>
+          <xsd:documentation>PLW</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="パプアニューギニア独立国">
+        <xsd:annotation>
+          <xsd:documentation>PNG</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="ポーランド共和国">
+        <xsd:annotation>
+          <xsd:documentation>POL</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="プエルトリコ">
+        <xsd:annotation>
+          <xsd:documentation>PRI</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="北朝鮮＝朝鮮民主主義人民共和国">
+        <xsd:annotation>
+          <xsd:documentation>PRK</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="ポルトガル共和国">
+        <xsd:annotation>
+          <xsd:documentation>PRT</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="パラグアイ共和国">
+        <xsd:annotation>
+          <xsd:documentation>PRY</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="西岸・ガザ （パレスチナ自治区）">
+        <xsd:annotation>
+          <xsd:documentation>PSE</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="フランス領ポリネシア">
+        <xsd:annotation>
+          <xsd:documentation>PYF</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="カタール国">
+        <xsd:annotation>
+          <xsd:documentation>QAT</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="レユニオン">
+        <xsd:annotation>
+          <xsd:documentation>REU</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="ルーマニア">
+        <xsd:annotation>
+          <xsd:documentation>ROU</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="ロシア連邦">
+        <xsd:annotation>
+          <xsd:documentation>RUS</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="ルワンダ共和国">
+        <xsd:annotation>
+          <xsd:documentation>RWA</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="サウジアラビア王国">
+        <xsd:annotation>
+          <xsd:documentation>SAU</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="スーダン共和国">
+        <xsd:annotation>
+          <xsd:documentation>SDN</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="セネガル共和国">
+        <xsd:annotation>
+          <xsd:documentation>SEN</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="シンガポール共和国">
+        <xsd:annotation>
+          <xsd:documentation>SGP</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="南ジョージア島・南サンドイッチ諸島">
+        <xsd:annotation>
+          <xsd:documentation>SGS</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="セントヘレナ・アセンション・トリスタンダクーニャ">
+        <xsd:annotation>
+          <xsd:documentation>SHN</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="スバールバル諸島・ヤンマイエン島">
+        <xsd:annotation>
+          <xsd:documentation>SJM</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="ソロモン諸島">
+        <xsd:annotation>
+          <xsd:documentation>SLB</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="シエラレオネ共和国">
+        <xsd:annotation>
+          <xsd:documentation>SLE</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="エルサルバドル共和国">
+        <xsd:annotation>
+          <xsd:documentation>SLV</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="サンマリノ共和国">
+        <xsd:annotation>
+          <xsd:documentation>SMR</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="ソマリア民主共和国">
+        <xsd:annotation>
+          <xsd:documentation>SOM</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="サンピエール島・ミクロン島">
+        <xsd:annotation>
+          <xsd:documentation>SPM</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="セルビア共和国">
+        <xsd:annotation>
+          <xsd:documentation>SRB</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="サントメ・プリンシペ民主共和国">
+        <xsd:annotation>
+          <xsd:documentation>STP</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="スリナム共和国">
+        <xsd:annotation>
+          <xsd:documentation>SUR</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="スロバキア共和国">
+        <xsd:annotation>
+          <xsd:documentation>SVK</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="スロベニア共和国">
+        <xsd:annotation>
+          <xsd:documentation>SVN</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="スウェーデン王国">
+        <xsd:annotation>
+          <xsd:documentation>SWE</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="スワジランド王国">
+        <xsd:annotation>
+          <xsd:documentation>SWZ</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="セーシェル共和国">
+        <xsd:annotation>
+          <xsd:documentation>SYC</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="シリア・アラブ共和国">
+        <xsd:annotation>
+          <xsd:documentation>SYR</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="タークス・カイコス諸島">
+        <xsd:annotation>
+          <xsd:documentation>TCA</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="チャド共和国">
+        <xsd:annotation>
+          <xsd:documentation>TCD</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="トーゴ共和国">
+        <xsd:annotation>
+          <xsd:documentation>TGO</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="タイ王国">
+        <xsd:annotation>
+          <xsd:documentation>THA</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="タジキスタン共和国">
+        <xsd:annotation>
+          <xsd:documentation>TJK</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="トケラウ諸島">
+        <xsd:annotation>
+          <xsd:documentation>TKL</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="トルクメニスタン">
+        <xsd:annotation>
+          <xsd:documentation>TKM</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="東ティモール民主共和国">
+        <xsd:annotation>
+          <xsd:documentation>TLS</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="トンガ王国">
+        <xsd:annotation>
+          <xsd:documentation>TON</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="トリニダード・トバゴ共和国">
+        <xsd:annotation>
+          <xsd:documentation>TTO</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="チュニジア共和国">
+        <xsd:annotation>
+          <xsd:documentation>TUN</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="トルコ共和国">
+        <xsd:annotation>
+          <xsd:documentation>TUR</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="ツバル">
+        <xsd:annotation>
+          <xsd:documentation>TUV</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="台湾（タイワン）">
+        <xsd:annotation>
+          <xsd:documentation>TWN</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="タンザニア連合共和国">
+        <xsd:annotation>
+          <xsd:documentation>TZA</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="ウガンダ共和国">
+        <xsd:annotation>
+          <xsd:documentation>UGA</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="ウクライナ">
+        <xsd:annotation>
+          <xsd:documentation>UKR</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="米領小離島">
+        <xsd:annotation>
+          <xsd:documentation>UMI</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="ウルグアイ東方共和国">
+        <xsd:annotation>
+          <xsd:documentation>URY</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="アメリカ合衆国">
+        <xsd:annotation>
+          <xsd:documentation>USA</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="ウズベキスタン共和国">
+        <xsd:annotation>
+          <xsd:documentation>UZB</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="バチカン市国">
+        <xsd:annotation>
+          <xsd:documentation>VAT</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="セントビンセント・グレナディーン諸島">
+        <xsd:annotation>
+          <xsd:documentation>VCT</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="ベネズエラ・ボリバル共和国">
+        <xsd:annotation>
+          <xsd:documentation>VEN</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="英領バージン諸島">
+        <xsd:annotation>
+          <xsd:documentation>VGB</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="米領バージン諸島">
+        <xsd:annotation>
+          <xsd:documentation>VIR</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="ベトナム社会主義共和国">
+        <xsd:annotation>
+          <xsd:documentation>VNM</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="バヌアツ共和国">
+        <xsd:annotation>
+          <xsd:documentation>VUT</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="ワリス・フテュナ諸島">
+        <xsd:annotation>
+          <xsd:documentation>WLF</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="サモア独立国">
+        <xsd:annotation>
+          <xsd:documentation>WSM</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="イエメン共和国">
+        <xsd:annotation>
+          <xsd:documentation>YEM</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="南アフリカ共和国">
+        <xsd:annotation>
+          <xsd:documentation>ZAF</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="ザンビア共和国">
+        <xsd:annotation>
+          <xsd:documentation>ZMB</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="ジンバブエ共和国">
+        <xsd:annotation>
+          <xsd:documentation>ZWE</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="不明">
+        <xsd:annotation>
+          <xsd:documentation>XXX</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+    </xsd:restriction>
+  </xsd:simpleType>
+</xsd:schema>
