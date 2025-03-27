@@ -36,3 +36,6 @@ GIFでは、データモデルを基礎編であるコアデータモデルと�
 * [43A_コアデータモデル解説書_建物(docx)](docx/43A_コアデータモデル解説書_建物.docx)
 * [43B_コアデータモデル解説書_設備(docx)](docx/43B_コアデータモデル解説書_設備.docx)
 * [43C_コアデータモデル解説書_イベント(docx)](docx/43C_コアデータモデル解説書_イベント.docx)
+ ### XSD
+* [GIF_Core_CodeList(xsd)](dmd/GIF_Core_CodeList.xsd)
+* [GIF_Core_DataModel(xsd)](dmd/GIF_Core_DataModel.xsd)
